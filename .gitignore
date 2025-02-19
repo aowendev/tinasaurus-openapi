@@ -1,3 +1,12 @@
+# macOS
+.DS_Store
+
+# Dependencies
+yarn.lock
+
+# Production
+/build
+
 # Logs
 logs
 *.log
@@ -106,6 +115,7 @@ dist
 
 # Docusaurus cache and generated files
 .docusaurus
+.cache-loader
 
 # Serverless directories
 .serverless/
