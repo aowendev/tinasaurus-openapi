@@ -123,6 +123,11 @@ const config: Config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
+            label: "MDX Page",
+            position: "left",
+            to: "Test-MDX-Page",
+          },
+          {
             label: "Petstore API",
             position: "left",
             to: "/docs/category/petstore-api",
