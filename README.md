@@ -6,7 +6,7 @@ The project was created by creating a new Docusaurus v3 site with Palo Alto Netw
 
 **Note**: Lunr search is available only in productoon.
 
-[![Tinasaurus Demo](https://res.cloudinary.com/forestry-demo/image/upload/v1677522334/tina-io/blog/tinacms-docusaurus-markdown-editing.gif "Tinasaurus Overview Video")](https://www.youtube.com/watch?v=2bHBwM54UB8)
+![Tinasaurus Demo](demo.png)
 
 ## Quickstart With Tina
 
