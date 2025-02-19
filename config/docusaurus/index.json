@@ -1,44 +1,5 @@
 {
   "label": "Settings",
-  "navbar": [
-    {
-      "label": "Docs",
-      "link": "doc",
-      "docLink": "docs/intro.mdx",
-      "position": "left"
-    },
-    {
-      "label": "Blog",
-      "link": "blog",
-      "position": "left"
-    },
-    {
-      "label": "MDX Page",
-      "link": "page",
-      "docLink": "src/pages/Test-MDX-Page.mdx",
-      "pageLink": "src/pages/Test-MDX-Page.mdx",
-      "position": "left"
-    },
-    {
-      "label": "Petstore API",
-      "link": "page",
-      "docLink": "/docs/docs/category/petstore-api/",
-      "pageLink": "/docs/docs/category/petstore-api/",
-      "position": "left"
-    },
-    {
-      "label": "Docusaurus GitHub",
-      "link": "external",
-      "externalLink": "https://github.com/facebook/docusaurus",
-      "position": "right"
-    },
-    {
-      "label": "Tina",
-      "link": "external",
-      "externalLink": "https://tina.io/",
-      "position": "right"
-    }
-  ],
   "logo": {
     "alt": "Tina",
     "src": "/img/tina-icon.svg"
@@ -94,5 +55,5 @@
     ],
     "copyright": "My Project, Inc. Built with Docusaurus."
   },
-  "url": "https://tinasaurus.vercel.app/"
+  "url": "http://localhost:3000/"
 }

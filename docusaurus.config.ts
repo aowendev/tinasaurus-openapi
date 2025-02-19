@@ -53,49 +53,13 @@ const formatFooterItem = (item) => {
   }
 };
 
-const formatNavbarItem = (item, subnav = false) => {
-  let navItem = {
-    label: item.label,
-  };
-
-  if (!subnav) {
-    navItem.position = item.position;
-  }
-
-  if (item.link === "external" && item.externalLink) {
-    navItem.href = item.externalLink;
-  }
-
-  if (item.link === "blog") {
-    navItem.to = "/blog";
-  }
-
-  if (item.link === "page" && item.pageLink) {
-    navItem.to = getPageRoute(item.pageLink);
-  }
-
-  if (item.link === "doc" && item.docLink) {
-    navItem.type = "doc";
-    navItem.docId = getDocId(item.docLink);
-  }
-
-  if (item.items) {
-    navItem.type = "dropdown";
-    navItem.items = item.items.map((subItem) => {
-      return formatNavbarItem(subItem, true);
-    });
-  }
-
-  return navItem;
-};
-
 const config: Config = {
   markdown: {
     mermaid: true,
   },
   title: docusaurusData.title || "My Site",
   tagline: docusaurusData.tagline || "Dinosaurs are cool",
-  url: docusaurusData.url || "https://tinasaurus.vercel.app/",
+  url: docusaurusData.url || "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -115,11 +79,16 @@ const config: Config = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.ts"),
+          // Remove this to remove the "edit this page" links.
           editUrl: docusaurusData.url + "/admin/#/collections/doc",
+          docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: {
           showReadingTime: true,
+          // Remove this to remove the "edit this page" links.
           editUrl: docusaurusData.url + "/admin/#/collections/post",
+          onInlineAuthors: "ignore",
+          onUntruncatedBlogPosts: "ignore",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -136,8 +105,7 @@ const config: Config = {
         },
       },
       navbar: {
-
-        title: docusaurusData.title || "",
+        title: docusaurusData.title || "My Site",
         logo: {
           alt: docusaurusData?.logo?.alt
             ? docusaurusData?.logo?.alt
@@ -146,9 +114,38 @@ const config: Config = {
             ? docusaurusData?.logo?.src
             : "img/logo.svg",
         },
-        items: docusaurusData.navbar.map((item) => {
-          return formatNavbarItem(item);
-        }),
+        items: [
+          {
+            type: "doc",
+            docId: "intro",
+            position: "left",
+            label: "Docs",
+          },
+          { to: "/blog", label: "Blog", position: "left" },
+          {
+            label: "Petstore API",
+            position: "left",
+            to: "/docs/category/petstore-api",
+          },
+          {
+            type: "docsVersionDropdown",
+            position: "right",
+          },
+          {
+            type: "localeDropdown",
+            position: "right",
+          },
+          {
+            href: "https://github.com/facebook/docusaurus",
+            label: "Docusaurus GitHub",
+            position: "right",
+          },
+          {
+            href: "https://tina.io/",
+            label: "Tina",
+            position: "right",
+          },
+        ],
       },
       footer: {
         style: docusaurusData.footer?.style || "dark",
