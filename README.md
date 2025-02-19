@@ -1,6 +1,6 @@
 # tinasaurus-openapi
 
-An example Docusaurus v3 documentation site with [TinaCMS](https://tina.io/), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) charts and [Lunr](https://lunrjs.com/) search integration.
+An example [Docusaurus 3](https://docusaurus.io/) documentation site with [TinaCMS](https://tina.io/), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) charts and [Lunr](https://lunrjs.com/) search integration.
 
 The project was created by creating a new Docusaurus v3 site with Palo Alto Networks' [OpenAPI plugin](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs) and merging [Tinasaurus](https://github.com/tinacms/tinasaurus) to create a working config.
 
@@ -26,9 +26,7 @@ Visit the CMS at [http://localhost:3000/admin](http://localhost:3000/admin) to s
 
 ## About
 
-This website is built using [Docusaurus 3](https://docusaurus.io/) and [TinaCMS](https://tina.io/).
-
-[Watch an overview of this project on YouTube](https://www.youtube.com/watch?v=2bHBwM54UB8).
+[Watch an overview of Tinasaurus on YouTube](https://www.youtube.com/watch?v=2bHBwM54UB8).
 
 ### Installation
 
