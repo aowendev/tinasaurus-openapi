@@ -153,7 +153,7 @@ const config: Config = {
         ],
       },
       footer: {
-        style: docusaurusData.footer?.style || "dark",
+//        style: docusaurusData.footer?.style || "dark",
         links: docusaurusData.footer?.links.map((item) => {
           return formatFooterItem(item);
         }),
