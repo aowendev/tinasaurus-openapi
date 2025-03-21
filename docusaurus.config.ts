@@ -60,7 +60,7 @@ const config: Config = {
   title: docusaurusData.title || "My Site",
   tagline: docusaurusData.tagline || "Dinosaurs are cool",
   url: docusaurusData.url || "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  baseUrl: "https://aowendev.github.io/tinasaurus-openapi/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",

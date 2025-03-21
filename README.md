@@ -4,7 +4,7 @@ An example [Docusaurus 3](https://docusaurus.io/) documentation site with [TinaC
 
 The project was created by creating a new Docusaurus v3 site with Palo Alto Networks' [OpenAPI plugin](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs) and merging [Tinasaurus](https://github.com/tinacms/tinasaurus) to create a working config.
 
-**Note**: Lunr search is available only in productoon.
+**Note**: Lunr search is available only in production.
 
 ![Tinasaurus Demo](demo.png)
 
