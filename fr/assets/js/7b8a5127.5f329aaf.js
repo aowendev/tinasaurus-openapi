@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktinasaurus_openapi=self.webpackChunktinasaurus_openapi||[]).push([[2258],{77869:a=>{a.exports=JSON.parse('{"tags":[{"label":"Demo","permalink":"/tinasaurus-openapi/fr/docs/tags/demo","count":2},{"label":"Getting started","permalink":"/tinasaurus-openapi/fr/docs/tags/getting-started","count":1}]}')}}]);
