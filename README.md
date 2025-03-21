@@ -6,6 +6,8 @@ The project was created by creating a new Docusaurus v3 site with Palo Alto Netw
 
 **Note**: Lunr search is available only in production.
 
+**Demo**: [https://aowendev.github.io/tinasaurus-openapi/](https://aowendev.github.io/tinasaurus-openapi/)
+
 ![Tinasaurus Demo](demo.png)
 
 ## Quickstart With Tina
