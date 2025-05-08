@@ -48,7 +48,7 @@ const RestartWarning = () => {
 
 const PostCollection = {
   name: "post",
-  label: "Posts",
+  label: "Blog Posts",
   path: "blog",
   format: "mdx",
   ui: {
@@ -136,6 +136,16 @@ const DocsCollection = {
   label: "Docs",
   path: "docs",
   format: "mdx",
+  ui: {
+    defaultItem: {
+      draft: true,
+      review: false,
+      translate: false,
+      approved: false,
+      published: false,
+      unlisted: false,
+    },
+  },
   fields: [
     {
       type: "string",
@@ -164,6 +174,38 @@ const DocsCollection = {
       label: "Body",
       isBody: true,
       templates: [...MDXTemplates],
+    },
+    {
+      type: "boolean",
+      name: "draft",
+      label: "Draft",
+      required: true,
+    },
+    {
+      type: "boolean",
+      name: "review",
+      label: "In Review",
+      required: true,
+    },
+    {
+      type: "boolean",
+      name: "translate",
+      label: "In Translation",
+    },
+    {
+      type: "boolean",
+      name: "approved",
+      label: "Translation Approved",
+    },
+    {
+      type: "boolean",
+      name: "puiblished",
+      label: "Published",
+    },
+    {
+      type: "boolean",
+      name: "unlisted",
+      label: "Unlisted",
     },
   ],
 };

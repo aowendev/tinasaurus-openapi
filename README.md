@@ -8,7 +8,25 @@ The project was created by creating a new Docusaurus v3 site with Palo Alto Netw
 
 **Demo**: [https://aowendev.github.io/tinasaurus-openapi/](https://aowendev.github.io/tinasaurus-openapi/)
 
-The demo includes the use of snippets (partials) and variables.
+The demo includes the use of snippets (partials), code snippets and variables (on the _Test Page_). It also includes an example  workflow for the _Docs_ collection in Tina:
+
+`Draft` → `In Review` → `In Translation` → `Published`
+
+It also enables you to set the `Unlisted` flag and a `Translation Approved` flag from Tina.
+
+### Folder structure
+
+```
+├── /apis: OpenAPI schema 
+├── /blog: blog posts
+├── /docs: user docs
+├── /reuse: reusable content
+│   ├── /code: code snippets
+│   ├── /snippets: text snippets
+│   └── /variables: translatable variables
+└── /static: static content
+    └─── /img: images (managed through TinaCMS)
+```
 
 ![Tinasaurus Demo](demo.png)
 
