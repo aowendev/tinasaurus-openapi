@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktinasaurus_openapi=self.webpackChunktinasaurus_openapi||[]).push([[6452],{6452:(e,a,s)=>{s.d(a,{createPacketServices:()=>u.$});var u=s(71609);s(19369)}}]);

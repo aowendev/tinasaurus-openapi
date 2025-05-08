@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktinasaurus_openapi=self.webpackChunktinasaurus_openapi||[]).push([[9720],{39720:(e,a,s)=>{s.d(a,{createArchitectureServices:()=>u.S});var u=s(49936);s(19369)}}]);
