@@ -1,6 +1,6 @@
 {
   "name": "tinasaurus-openapi",
-  "version": "0.0.0",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -32,7 +32,7 @@
     "raw-loader": "^4.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tinacms": "^2.6.4",
+    "tinacms": "2.7.6",
     "title": "^4.0.1"
   },
   "browserslist": {
@@ -48,7 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.8.4",
+    "@tinacms/cli": "^1.9.6",
     "@types/node": "^22.13.2"
   }
 }
