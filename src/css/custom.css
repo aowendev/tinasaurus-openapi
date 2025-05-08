@@ -9,7 +9,7 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-footer-background-color: #f2f2f2;
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #ec4815;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -58,25 +58,25 @@
 
 .get>.menu__link::before {
   content: "get";
-  background-color: var(--ifm-color-primary);
+  background-color: rgb(47, 129, 50);
 }
 
 .put>.menu__link::before {
   content: "put";
-  background-color: var(--openapi-code-blue);
+  background-color: rgb(149, 80, 124);
 }
 
 .post>.menu__link::before {
   content: "post";
-  background-color: var(--openapi-code-green);
+  background-color: rgb(24, 111, 175);
 }
 
 .delete>.menu__link::before {
   content: "del";
-  background-color: var(--openapi-code-red);
+  background-color: rgb(204, 51, 51);
 }
 
 .patch>.menu__link::before {
   content: "patch";
-  background-color: var(--openapi-code-orange);
+  background-color: rgb(191, 88, 29);
 }

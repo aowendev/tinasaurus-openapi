@@ -58,7 +58,7 @@ const config: Config = {
     mermaid: true,
   },
   title: docusaurusData.title || "My Site",
-  tagline: docusaurusData.tagline || "Dinosaurs are cool",
+  tagline: docusaurusData.tagline || "Llamas and dinosaurs are cool",
   url: docusaurusData.url || "https://your-docusaurus-test-site.com",
   baseUrl: "/tinasaurus-openapi/",
   onBrokenLinks: "throw",
