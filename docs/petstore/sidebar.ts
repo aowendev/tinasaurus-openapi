@@ -30,7 +30,7 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "petstore/update-pet",
           label: "Update an existing pet",
-          className: "api-method put",
+          className: "api-method patch",
         },
         {
           type: "doc",

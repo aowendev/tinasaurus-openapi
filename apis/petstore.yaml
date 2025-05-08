@@ -160,7 +160,7 @@ paths:
             }
       requestBody:
         $ref: "#/components/requestBodies/Pet"
-    put:
+    patch:
       tags:
         - pet
       summary: Update an existing pet

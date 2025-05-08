@@ -80,7 +80,7 @@ const config: Config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.ts"),
           // Remove this to remove the "edit this page" links.
-          editUrl: docusaurusData.url + "/admin/#/collections/doc",
+          editUrl: docusaurusData.url + "/admin/#/collections/edit",
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: {
@@ -278,7 +278,7 @@ const config: Config = {
         docsPluginId: "classic",
         config: {
           petstore: {
-            specPath: "examples/petstore.yaml",
+            specPath: "apis/petstore.yaml",
             outputDir: "docs/petstore",
             downloadUrl:
               "https://raw.githubusercontent.com/PaloAltoNetworks/docusaurus-template-openapi-docs/main/examples/petstore.yaml",

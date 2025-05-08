@@ -80,3 +80,39 @@
   content: "patch";
   background-color: rgb(191, 88, 29);
 }
+
+/* GET */
+.badge--primary {
+  background-color:rgb(47, 129, 50);
+  border-color:rgb(47, 129, 50);
+  color: white;
+}
+
+/* PUT */
+.badge--info {
+  background-color:rgb(149, 80, 124);
+  border-color:rgb(149, 80, 124);
+  color: white;
+}
+
+/* POST */
+.badge--success {
+  background-color:rgb(24, 111, 175);
+  border-color:rgb(24, 111, 175);
+  color: white;
+}
+
+/* DEL */
+.badge--danger {
+  background-color:rgb(204, 51, 51);
+  border-color:rgb(204, 51, 51);
+  color: white;
+}
+
+/* PATCH */
+.badge--warning {
+  background-color:rgb(191, 88, 29);
+  border-color:rgb(191, 88, 29);
+  color: white;
+}
+
