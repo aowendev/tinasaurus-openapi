@@ -15,3 +15,26 @@ Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et m
 ## Sub heading
 
 Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+
+## Content Reuse
+
+### Snippets
+
+import SnippetExample from '../reuse/snippets/_snippet-example.mdx';
+
+<SnippetExample name="Tina" />
+
+### Variables
+
+import { vars } from '../reuse/variables/_variables.mdx';
+
+Name: {vars[0].en[0].name}.  
+Year: {vars[0].en[0].year}.
+
+### Code Snippets
+
+import CodeBlock from '@theme/CodeBlock';
+
+import MyComponentSource from '!!raw-loader!../reuse/code/example.xml';
+
+<CodeBlock language="xml" title="Example">{MyComponentSource}</CodeBlock>
