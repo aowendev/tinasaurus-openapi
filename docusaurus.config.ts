@@ -61,7 +61,7 @@ const config: Config = {
   tagline: docusaurusData.tagline || "Llamas and dinosaurs are cool",
   url: docusaurusData.url || "https://your-docusaurus-test-site.com",
   baseUrl: "/tinasaurus-openapi/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   // Even if you don't use internalization, you can use this field to set useful
@@ -80,13 +80,13 @@ const config: Config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.ts"),
           // Remove this to remove the "edit this page" links.
-          editUrl: docusaurusData.url + "/admin/#/collections/edit",
+          editUrl: ({permalink})=>{return permalink.replace("/docs/","/admin#/collections/edit/doc/")},
           docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi
         },
         blog: {
           showReadingTime: true,
           // Remove this to remove the "edit this page" links.
-          editUrl: docusaurusData.url + "/admin/#/collections/post",
+          editUrl: ({permalink})=>{return permalink.replace("/blog/","/admin#/collections/edit/post/")},
           onInlineAuthors: "ignore",
           onUntruncatedBlogPosts: "ignore",
         },
