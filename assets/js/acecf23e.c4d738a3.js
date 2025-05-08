@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktinasaurus_openapi=self.webpackChunktinasaurus_openapi||[]).push([[1903],{1912:a=>{a.exports=JSON.parse('{"blogBasePath":"/https://aowendev.github.io/tinasaurus-openapi/blog","blogTitle":"Blog","authorsListPath":"/https://aowendev.github.io/tinasaurus-openapi/blog/authors"}')}}]);
