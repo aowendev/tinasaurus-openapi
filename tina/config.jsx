@@ -135,6 +135,34 @@ const PostCollection = {
       name: "body",
       label: "Body",
       isBody: true,
+      templates: [...MDXTemplates,],
+    },
+  ],
+};
+
+const SnippetsCollection = {
+  name: "snippets",
+  label: "Snippets",
+  path: "reuse/snippets",
+  format: "mdx",
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "Title",
+      isTitle: true,
+      required: true,
+    },
+    {
+      type: "string",
+      name: "description",
+      label: "Description",
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Body",
+      isBody: true,
       templates: [...MDXTemplates],
     },
   ],
@@ -199,7 +227,7 @@ const DocsCollection = {
     },
     {
       type: "boolean",
-      name: "puiblished",
+      name: "published",
       label: "Published",
     },
     {
@@ -927,6 +955,7 @@ export default defineConfig({
   schema: {
     collections: [
       DocsCollection,
+      SnippetsCollection,
       PostCollection,
       HomepageCollection,
       PagesCollection,

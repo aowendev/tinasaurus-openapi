@@ -1,19 +1,19 @@
 {
   "tags": [
     {
-      "name": "facebook"
+      "name": "Demo"
     },
     {
       "name": "docusaurus"
     },
     {
-      "name": "hello"
-    },
-    {
-      "name": "Demo"
+      "name": "facebook"
     },
     {
       "name": "Getting started"
+    },
+    {
+      "name": "hello"
     }
   ]
 }
