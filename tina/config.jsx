@@ -8,6 +8,15 @@ import { MDXTemplates } from "../src/theme/template";
 import { docusaurusDate, titleFromSlug } from "../util";
 import title from "title";
 
+// Get doc tags from the JSON file
+import data from "../reuse/tags/index.json";
+
+const allTags = [];
+
+Object.keys(data.tags).forEach(key => {
+    allTags.push(data.tags[key].name); 
+  });
+
 // Your hosting provider likely exposes this as an environment variable
 const branch =
   process.env.VERCEL_GIT_COMMIT_REF ||
@@ -160,15 +169,6 @@ const DocsCollection = {
       label: "Description",
     },
     {
-      label: "Tags",
-      name: "tags",
-      type: "string",
-      list: true,
-      ui: {
-        component: "tags",
-      },
-    },
-    {
       type: "rich-text",
       name: "body",
       label: "Body",
@@ -207,8 +207,54 @@ const DocsCollection = {
       name: "unlisted",
       label: "Unlisted",
     },
+    {
+      label: "Tags",
+      name: "tags",
+      type: "string",
+      options: allTags,
+      list: true,
+    },
   ],
 };
+
+// Manage doc tags in a separate collection
+const TagsCollection = {
+  label: 'Taxonomy',
+  name: 'tags',
+  path: 'reuse/tags',
+  format: 'json',
+  fields: [
+    {
+      type: "string",
+      name: "_warning",
+      ui: {
+        component: () => {
+          return <RestartWarning />;
+        },
+      },
+    },
+    {
+      type: "object",
+      label: "Tags",
+      name: "tags",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item.name,
+        }),},
+      fields: [
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+        }]},],
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },},
+}
+
 
 const DocLinkTemplate = {
   name: "doc",
@@ -886,6 +932,7 @@ export default defineConfig({
       PagesCollection,
       SidebarCollection,
       SettingsCollection,
+      TagsCollection,
     ],
   },
 });

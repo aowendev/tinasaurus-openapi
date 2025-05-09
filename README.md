@@ -1,6 +1,6 @@
 # tinasaurus-openapi
 
-An example [Docusaurus 3](https://docusaurus.io/) documentation site with [TinaCMS](https://tina.io/), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) charts, [Lunr](https://lunrjs.com/) search integration and [Raw Loader](https://github.com/webpack-contrib/raw-loader) for code snippets.
+An example [Docusaurus 3](https://docusaurus.io/) documentation site with [TinaCMS](https://tina.io/) (including tag management), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) charts, [Lunr](https://lunrjs.com/) search integration and [Raw Loader](https://github.com/webpack-contrib/raw-loader) for code snippets.
 
 The project was created by creating a new Docusaurus v3 site with Palo Alto Networks' [OpenAPI plugin](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs) and merging [Tinasaurus](https://github.com/tinacms/tinasaurus) to create a working config.
 
@@ -23,6 +23,7 @@ It also enables you to set the `Unlisted` flag and a `Translation Approved` flag
 ├── /reuse: reusable content
 │   ├── /code: code snippets
 │   ├── /snippets: text snippets
+│   ├── /tags: taxonomy tags
 │   └── /variables: translatable variables
 └── /static: static content
     └─── /img: images (managed through TinaCMS)
