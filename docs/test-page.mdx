@@ -1,41 +1,26 @@
 ---
 title: Test Page
-description: >-
-  Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec
-  ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna,
-  vel scelerisque nisl consectetur et.
+description: Page for testing out new Tinasaurus OpenAPI features
 tags:
   - Demo
 ---
 
-# This is a test page
+# Content Reuse
 
-Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+Here are some examples of content reuse.
 
-## Sub heading
+## Code Snippets
 
-Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.
+<CodeSnippet title="This is a code snippet from a file:" language="xml" filepath="example.xml" />
 
-## Content Reuse
+## Glossary terms
 
-### Snippets
+Hover over this glossary term: <GlossaryTerm termKey="single-sourcing" />
 
-import SnippetExample from '../reuse/snippets/_snippets-example.mdx';
+## Snippets
 
-<SnippetExample name="Tina" />
+<Snippet filepath="example.mdx" />
 
-### Variables
+## Variable Sets
 
-Inline variable (<VariableSet setKey="writing-terms" variableKey="single-sourcing" />) can be added in the rich text editor.
-
-### Glossary terms
-
-Glossary terms such as <GlossaryTerm termKey="single-sourcing" /> can also be added.
-
-### Code Snippets
-
-import CodeBlock from '@theme/CodeBlock';
-
-import MyComponentSource from '!!raw-loader!../reuse/code/example.xml';
-
-<CodeBlock language="xml" title="Example">{MyComponentSource}</CodeBlock>
+This is a variable: <VariableSet setKey="writing-terms" variableKey="single-sourcing" />

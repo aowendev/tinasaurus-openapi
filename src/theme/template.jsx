@@ -74,12 +74,12 @@ const DetailsTemplate = {
 };
 
 const CodeBlockTemplate = {
-  name: "CodeBlock",
+  name: "CodeSnippet",
   label: "Code Block",
   fields: [
     {
       name: "title",
-      label: "Filename",
+      label: "Title",
       type: "string",
     },
     {
@@ -88,9 +88,9 @@ const CodeBlockTemplate = {
       type: "string",
     },
     {
-      name: "children",
-      label: "Code",
-      type: "rich-text",
+      name: "filepath",
+      label: "File Path",
+      type: "string",
       required: true,
     },
   ],
