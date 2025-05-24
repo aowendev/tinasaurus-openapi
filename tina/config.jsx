@@ -18,10 +18,10 @@ Object.keys(data.tags).forEach(key => {
   });
 
 // Your hosting provider likely exposes this as an environment variable
-// const branch =
+const branch =
 //  process.env.VERCEL_GIT_COMMIT_REF ||
 //  process.env.HEAD ||
-//  "main";
+  "main";
 
 const WarningIcon = (props) => {
   return (
