@@ -18,10 +18,10 @@ Object.keys(data.tags).forEach(key => {
   });
 
 // Your hosting provider likely exposes this as an environment variable
-const branch =
-  process.env.VERCEL_GIT_COMMIT_REF ||
-  process.env.HEAD ||
-  "main";
+// const branch =
+//  process.env.VERCEL_GIT_COMMIT_REF ||
+//  process.env.HEAD ||
+//  "main";
 
 const WarningIcon = (props) => {
   return (
@@ -282,7 +282,6 @@ const TagsCollection = {
       delete: false,
     },},
 }
-
 
 const DocLinkTemplate = {
   name: "doc",
