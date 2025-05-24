@@ -57,13 +57,19 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  title: docusaurusData.title || "My Site",
+  title: docusaurusData.title || "Tinasaurus OpenAPI",
   tagline: docusaurusData.tagline || "Llamas and dinosaurs are cool",
-  url: docusaurusData.url || "https://your-docusaurus-test-site.com",
+  url: docusaurusData.url || "https://aowendev.github.io/tinasaurus-openapi/",
   baseUrl: "/tinasaurus-openapi/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
+
+  // Github pages deployment config.
+  projectName: 'aowendev.github.io',
+  organizationName: 'aowendev',
+  trailingSlash: false,
+
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
