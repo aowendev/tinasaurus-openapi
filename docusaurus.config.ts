@@ -57,10 +57,10 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  title: docusaurusData.title || "My Site",
+  title: docusaurusData.title || "Tinasaurus OpenAPI",
   tagline: docusaurusData.tagline || "Llamas and dinosaurs are cool",
-  url: docusaurusData.url || "https://your-docusaurus-test-site.com",
-  baseUrl: "/tinasaurus-openapi/",
+  url: docusaurusData.url || "https://aowendev.github.io/tinasaurus-openapi/",
+  baseUrl: "https://aowendev.github.io/tinasaurus-openapi/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
