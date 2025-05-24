@@ -57,7 +57,7 @@ const RestartWarning = () => {
 
 const PostCollection = {
   name: "post",
-  label: "Blog Posts",
+  label: "Blog Articles",
   path: "blog",
   format: "mdx",
   ui: {
@@ -170,7 +170,7 @@ const SnippetsCollection = {
 
 const DocsCollection = {
   name: "doc",
-  label: "Docs",
+  label: "Topics",
   path: "docs",
   format: "mdx",
   ui: {
@@ -247,7 +247,7 @@ const DocsCollection = {
 
 // Manage doc tags in a separate collection
 const TagsCollection = {
-  label: 'Taxonomy',
+  label: 'Tags',
   name: 'tags',
   path: 'reuse/tags',
   format: 'json',
@@ -462,7 +462,7 @@ const SidebarItemsField = {
 
 const SidebarCollection = {
   name: "sidebar",
-  label: "Docs Sidebar",
+  label: "Table of Contents",
   path: "config/sidebar",
   format: "json",
   ui: {
@@ -854,7 +854,7 @@ const SettingsCollection = {
 
 const HomepageCollection = {
   name: "homepage",
-  label: "Homepage",
+  label: "Landing Page",
   description:
     "To see settings changes reflected on your site, you must restart the Tina CLI after saving changes (local development only).",
   path: "config/homepage",
@@ -954,14 +954,14 @@ export default defineConfig({
   },
   schema: {
     collections: [
+      HomepageCollection,
+      SidebarCollection,
       DocsCollection,
       SnippetsCollection,
       PostCollection,
-      HomepageCollection,
       PagesCollection,
-      SidebarCollection,
-      SettingsCollection,
       TagsCollection,
+      SettingsCollection,
     ],
   },
 });

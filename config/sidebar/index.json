@@ -2,86 +2,125 @@
   "label": "Docs Sidebar",
   "items": [
     {
-      "document": "docs/intro.mdx",
-      "_template": "doc"
-    },
-    {
-      "title": "Tutorial - Basics",
+      "title": "Quick Start",
       "link": "generated",
       "items": [
         {
-          "document": "docs/tutorial-basics/create-a-page.mdx",
-          "_template": "doc"
-        },
-        {
-          "document": "docs/tutorial-basics/create-a-document.mdx",
-          "_template": "doc"
-        },
-        {
-          "document": "docs/tutorial-basics/create-a-blog-post.mdx",
-          "_template": "doc"
-        },
-        {
-          "document": "docs/tutorial-basics/deploy-your-site.mdx",
-          "_template": "doc"
-        },
-        {
-          "document": "docs/tutorial-basics/congratulations.mdx",
+          "document": "docs/quick-start/quick-start.mdx",
           "_template": "doc"
         }
       ],
       "_template": "category"
     },
     {
-      "title": "Tutorial - Extras",
+      "title": "Author",
       "link": "generated",
       "items": [
         {
-          "document": "docs/tutorial-extras/manage-docs-versions.mdx",
-          "_template": "doc"
-        },
-        {
-          "document": "docs/tutorial-extras/translate-your-site.mdx",
+          "document": "docs/author/author.mdx",
           "_template": "doc"
         }
       ],
       "_template": "category"
     },
     {
-      "document": "docs/mermaid.mdx",
-      "label": "Mermaid Example",
-      "_template": "doc"
-    },
-    {
-      "title": "Nested Link",
-      "link": "none",
+      "title": "Diagram",
+      "link": "generated",
       "items": [
         {
-          "title": "Level 2",
-          "link": "none",
-          "items": [
-            {
-              "title": "Level 3",
-              "link": "none",
-              "items": [
-                {
-                  "document": "docs/test-page.mdx",
-                  "label": "",
-                  "_template": "doc"
-                }
-              ],
-              "_template": "category"
-            }
-          ],
-          "_template": "category"
+          "document": "docs/diagram/diagram.mdx",
+          "_template": "doc"
         }
       ],
       "_template": "category"
     },
     {
-      "title": "Tina.io",
-      "href": "https://tina.io/",
-      "_template": "link"
+      "title": "Media",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/media/media.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "OpenAPI",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/openapi/openapi.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Reuse",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/reuse/reuse.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Search",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/search/search.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Tag",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/tag/tag.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Translate",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/translate/translate.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Publish",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/publish/publish.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Version",
+      "link": "generated",
+      "items": [
+        {
+          "document": "docs/version/version.mdx",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
     }
   ]
 }
