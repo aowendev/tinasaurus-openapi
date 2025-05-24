@@ -2,9 +2,10 @@
   "label": "Settings",
   "logo": {
     "alt": "Tina",
-    "src": "/img/tina-icon.svg"
+    "src": "/img/logo.svg"
   },
   "title": "Tinasaurus OpenAPI",
+  "url": "http://localhost:3000/",
   "footer": {
     "style": "dark",
     "links": [
@@ -12,9 +13,14 @@
         "title": "Docs",
         "items": [
           {
-            "label": "Introduction",
-            "to": "docs/intro.mdx",
-            "_template": "internal"
+            "label": "Docusaurus",
+            "href": "https://docusaurus.io/docs",
+            "_template": "external"
+          },
+          {
+            "label": "TinaCMS",
+            "href": "https://tina.io/docs",
+            "_template": "external"
           }
         ]
       },
@@ -22,38 +28,48 @@
         "title": "Community",
         "items": [
           {
-            "label": "Stack Overflow",
-            "href": "https://stackoverflow.com/questions/tagged/docusaurus",
-            "_template": "external"
-          },
-          {
-            "label": "Discord",
+            "label": "Docusaurus",
             "href": "https://discordapp.com/invite/docusaurus",
             "_template": "external"
           },
           {
-            "label": "Twitter",
-            "href": "https://twitter.com/docusaurus",
+            "label": "TinaCMS",
+            "href": "https://discord.com/invite/tina-835168149439643678",
             "_template": "external"
           }
         ]
       },
       {
-        "title": "More",
+        "title": "Blog",
         "items": [
           {
-            "label": "Blog",
-            "_template": "blog"
+            "label": "Docusarus",
+            "href": "https://docusaurus.io/blog",
+            "_template": "external"
           },
           {
-            "label": "GitHub",
+            "label": "TinaCMS",
+            "href": "https://tina.io/blog",
+            "_template": "external"
+          }
+        ]
+      },
+      {
+        "title": "GitHub",
+        "items": [
+          {
+            "label": "Docusarus",
             "href": "https://github.com/facebook/docusaurus",
+            "_template": "external"
+          },
+          {
+            "label": "TinaCMS",
+            "href": "https://github.com/tinacms/tinacms",
             "_template": "external"
           }
         ]
       }
     ],
-    "copyright": "My Project, Inc. Built with Tinasaurus."
-  },
-  "url": "http://localhost:3000/"
+    "copyright": "Andrew Owen. Built with Tinasaurus OpenAPI."
+  }
 }

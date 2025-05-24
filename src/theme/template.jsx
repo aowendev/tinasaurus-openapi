@@ -35,7 +35,7 @@ const AdmonitionTemplate = {
           value: "caution",
         },
         {
-          label: "Danger",
+          label: "Warning",
           value: "danger",
         },
       ],

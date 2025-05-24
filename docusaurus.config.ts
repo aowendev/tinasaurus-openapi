@@ -58,7 +58,7 @@ const config: Config = {
     mermaid: true,
   },
   title: docusaurusData.title || "Tinasaurus OpenAPI",
-  tagline: docusaurusData.tagline || "CCMS-as-code",
+  tagline: docusaurusData.tagline || "CCMS meets docs-as-code",
   url: docusaurusData.url || "https://aowendev.github.io/tinasaurus-openapi/",
   baseUrl: "/tinasaurus-openapi/",
   onBrokenLinks: "warn",
@@ -138,24 +138,24 @@ const config: Config = {
             position: "left",
             to: "/docs/category/petstore-api",
           },
-          // {
-          //   type: "docsVersionDropdown",
-          //   position: "right",
-          // },
+//          {
+//            type: "docsVersionDropdown",
+//            position: "right",
+//          },
           {
             type: "localeDropdown",
             position: "right",
           },
-          {
-            href: "https://docusaurus.io/docs",
-            label: "Docusaurus",
-            position: "right",
-          },
-          {
-            href: "https://tina.io/docs",
-            label: "TinaCMS",
-            position: "right",
-          },
+//          {
+//            href: "https://docusaurus.io/docs",
+//            label: "Docusaurus",
+//            position: "right",
+//          },
+//          {
+//            href: "https://tina.io/docs",
+//            label: "TinaCMS",
+//            position: "right",
+//          },
         ],
       },
       footer: {
