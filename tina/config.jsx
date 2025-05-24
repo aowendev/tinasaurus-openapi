@@ -8,6 +8,10 @@ import { MDXTemplates } from "../src/theme/template";
 import { docusaurusDate, titleFromSlug } from "../util";
 import title from "title";
 
+import { GlossaryTermBlockTemplate } from "../src/components/GlossaryTerm/template";
+import { VariableSetBlockTemplate } from "../src/components/VariableSet/template";
+
+
 // Get doc tags from the JSON file
 import data from "../reuse/tags/index.json";
 

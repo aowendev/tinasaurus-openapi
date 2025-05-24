@@ -168,10 +168,36 @@ const DocCardListTemplate = {
   ],
 };
 
+// aowendev components follow
+
+const CommentsTemplate = {
+  name: 'hidden',
+  label: 'Comment',
+  match: {
+    start: "<!--",
+    end: "-->",
+  },
+  ui: {
+    itemProps: (item) => {
+      return { label: item?.title };
+    },
+  },
+  fields: [
+    {
+      name: "comment",
+      label: "Comment",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+  ],
+};
+
 export const MDXTemplates = [
   AdmonitionTemplate,
-  DetailsTemplate,
+  CommentsTemplate,
   CodeBlockTemplate,
-  TabsTemplate,
+  DetailsTemplate,
   DocCardListTemplate,
+  TabsTemplate,
 ];

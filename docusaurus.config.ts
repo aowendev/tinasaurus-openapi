@@ -37,7 +37,7 @@ const formatFooterItem = (item) => {
       }),
     };
   } else {
-    let linkObject = {
+    let linkObject: { label: any; to?: string; href?: string } = {
       label: item.label,
     };
 

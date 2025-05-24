@@ -6,6 +6,9 @@ import Tabs from "@theme-original/Tabs";
 import TabItem from "@theme-original/TabItem";
 import DocCardList from "@theme-original/DocCardList";
 
+import GlossaryTerm from "@site/src/components/GlossaryTerm";
+import VariableSet from "@site/src/components/VariableSet";
+
 export default {
   ...MDXComponents,
   Details: Details,
@@ -14,4 +17,7 @@ export default {
   TabItem: TabItem,
   Admonition: MDXComponents.admonition,
   DocCardList: DocCardList,
+
+  GlossaryTerm: GlossaryTerm,
+  VariableSet: VariableSet,
 };

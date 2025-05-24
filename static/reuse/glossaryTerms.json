@@ -1,0 +1,12 @@
+{
+  "single-sourcing": {
+    "en": {
+      "term": "single sourcing",
+      "definition": "A content strategy where content is created once and reused in multiple contexts or formats."
+      },
+    "fr": {
+      "term": "approvisionnement unique",
+      "definition": "Une stratégie de contenu où le contenu est créé une fois et réutilisé dans plusieurs contextes ou formats."
+      }
+  }
+}
