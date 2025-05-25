@@ -6,7 +6,6 @@ const VariableSet = ({ setKey, variableKey }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Use absolute path for fetch in Docusaurus/static
         const response = await fetch('../reuse/variableSets/index.json');
         const jsonData = await response.json();
         const lang = document.documentElement.lang;

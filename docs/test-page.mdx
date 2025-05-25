@@ -5,26 +5,64 @@ tags:
   - Demo
 ---
 
-# Content Reuse
+# Embeddable Components
 
-Here are some examples of content reuse.
+![](/img/docs/localeDropdown.png)
 
-## Code Snippets
+#### Admonitions
+
+<Admonition type="note" title="Note Title">
+  This is one of the five types of admonition. The others are `Tip`, `Info`, `Caution` and `Warning`.
+</Admonition>
+
+#### Code Snippets
 
 <CodeSnippet title="This is a code snippet from a file:" language="xml" filepath="example.xml" />
 
-## Glossary terms
+#### Comments
+
+<!-- hidden comment="This comment will not be visible, even by inspecting the output." -->
+
+#### Context Help
+
+[URL](#csh)
+
+<a id="csh" />
+
+#### Details
+
+<Details summary="This is an expanding block.">
+  Here are the details.
+</Details>
+
+#### Figures
+
+<Figure img="/img/undraw_docusaurus_mountain.svg" caption="An image." size="30%" />
+
+#### Glossary terms
 
 Hover over this glossary term: <GlossaryTerm termKey="single-sourcing" />
 
-## Snippets
+#### Snippets
 
 <Snippet filepath="example.mdx" />
 
-## Variable Sets
+#### Tabs
+
+<Tabs>
+  <TabItem value="apple" label="Apple">
+    This is an apple 🍎
+  </TabItem>
+
+  <TabItem value="orange" label="Orange">
+    This is an orange 🍊
+  </TabItem>
+
+  <TabItem value="banana" label="Banana">
+    This is a banana 🍌
+  </TabItem>
+</Tabs>
+
+#### Variable Sets
 
 This is a variable: <VariableSet setKey="writing-terms" variableKey="single-sourcing" />
-
-# Hidden Comments
-
-<!-- hidden comment="This comment will not be visible, even by inspecting the output." -->

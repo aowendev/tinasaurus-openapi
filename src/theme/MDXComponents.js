@@ -7,6 +7,7 @@ import TabItem from "@theme-original/TabItem";
 import DocCardList from "@theme-original/DocCardList";
 
 import CodeSnippet from "@site/src/components/CodeSnippet";
+import Figure from "@site/src/components/Figure";
 import GlossaryTerm from "@site/src/components/GlossaryTerm";
 import Snippet from "@site/src/components/Snippet";
 import VariableSet from "@site/src/components/VariableSet";
@@ -21,6 +22,7 @@ export default {
   DocCardList: DocCardList,
 
   CodeSnippet: CodeSnippet,
+  Figure: Figure,
   GlossaryTerm: GlossaryTerm,
   Snippet: Snippet,
   VariableSet: VariableSet,

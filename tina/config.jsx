@@ -1089,7 +1089,7 @@ const PagesCollection = {
 export default defineConfig({
   branch,
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID, // Get this from tina.io
-  token: process.env.TINA_TOKEN, // Get this from tina.io
+  token: process.env.TINA_TOKEN, // Read-only token from tina.io
   build: {
     outputFolder: "admin",
     publicFolder: "static",
@@ -1118,7 +1118,7 @@ export default defineConfig({
   },
   search: {
     tina: {
-      indexerToken: 'c72c700ed9905698e5105aff58bd1d51fe653f1b',
+      indexerToken: process.env.TINA_SEARCH_TOKEN, // Search token from tina.io
       stopwordLanguages: ['eng'],
     },
     indexBatchSize: 100,

@@ -121,6 +121,11 @@
         }
       ],
       "_template": "category"
+    },
+    {
+      "document": "docs/test-page.mdx",
+      "label": "Testing",
+      "_template": "doc"
     }
   ]
 }

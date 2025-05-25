@@ -102,66 +102,6 @@ const CodeBlockTemplate = {
   ],
 };
 
-const TabsTemplate = {
-  name: "Tabs",
-  fields: [
-    {
-      name: "children",
-      label: "Tabs",
-      type: "rich-text",
-      templates: [
-        {
-          name: "TabItem",
-          label: "Tab",
-          ui: {
-            defaultItem: {
-              label: "Tab",
-              value: "tab",
-            },
-          },
-          fields: [
-            {
-              name: "label",
-              label: "Label",
-              type: "string",
-              isTitle: true,
-              required: true,
-            },
-            {
-              name: "value",
-              type: "string",
-              ui: {
-                component: ({ input, tinaForm }) => {
-                  React.useEffect(() => {
-                    input.onChange(slugify(tinaForm.values.label));
-                  }, [JSON.stringify(tinaForm.values)]);
-
-                  return (
-                    <input
-                      type="text"
-                      id={input.name}
-                      className="hidden"
-                      {...input}
-                    />
-                  );
-                },
-              },
-            },
-            {
-              name: "children",
-              label: "Content",
-              type: "string",
-              ui: {
-                component: "textarea",
-              },
-            },
-          ],
-        },
-      ],
-    },
-  ],
-};
-
 const DocCardListTemplate = {
   name: "DocCardList",
   label: "Doc Card List",
@@ -175,6 +115,42 @@ const DocCardListTemplate = {
 };
 
 // aowendev components follow
+
+const TabsItemTemplate ={
+  name: "TabItem",
+  label: "Tab Item",
+  fields: [
+    {
+      name: "label",
+      label: "Label",
+      type: "string",
+    },
+    {
+      name: "value",
+      label: "Value",
+      type: "string",
+    },
+    {
+      name: "children",
+      label: "Content",
+      type: "rich-text",
+    },
+  ],
+}
+
+// fixme: Doesn;t work in the grahpical editor but at least allows content to be valid.
+
+const TabsTemplate = {
+  name: "Tabs",
+  fields: [
+    {
+      name: "children",
+      label: "Tabs",
+      type: "rich-text",
+      templates: [ TabsItemTemplate ],
+    },
+  ],
+};
 
 const GlossaryTermTemplate = {
   name: "GlossaryTerm",
@@ -259,12 +235,73 @@ const CommentsTemplate = {
   ],
 };
 
+// Get the last segment of the path as the slug
+const usePageSlug = () => {
+  if (typeof window === "undefined") return "";
+  const path = window.location.pathname;
+  const segments = path.split('/').filter(Boolean);
+  return segments[segments.length - 1] || "";
+};
+
+const slug = usePageSlug();
+
+const ContextHelpTemplate = {
+  name: "a",
+  label: "Context Help",
+  ui: {
+    itemProps: (item, slug) => {
+      return { label: item?.title };
+    },
+  },
+  fields: [
+    {
+      name: "id",
+      label: "Context Help ID (\<URL>/docs/\<slug>#\<ID>)",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+  ],
+};
+
+const FigureTemplate = {
+  name: "Figure",
+  label: "Figure",
+  ui: {
+    itemProps: (item) => {
+      return { label: item?.title };
+    },
+  },
+  fields: [
+    {
+      name: "img",
+      label: "Image",
+      type: "image",
+      required: true,
+    },
+    {
+      name: "caption",
+      label: "Caption",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+    {
+      name: "size",
+      label: "Size",
+      type: "string",
+    }
+  ],
+};
+
 export const MDXTemplates = [
   AdmonitionTemplate,
   CommentsTemplate,
   CodeBlockTemplate,
+  ContextHelpTemplate,
   DetailsTemplate,
   DocCardListTemplate,
+  FigureTemplate,
   GlossaryTermTemplate,
   SnippetTemplate,
   TabsTemplate,
