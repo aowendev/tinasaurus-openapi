@@ -76,6 +76,11 @@ const DetailsTemplate = {
 const CodeBlockTemplate = {
   name: "CodeSnippet",
   label: "Code Block",
+  ui: {
+    itemProps: (item) => {
+      return { label: item?.title };
+    },
+  },
   fields: [
     {
       name: "title",
@@ -91,6 +96,7 @@ const CodeBlockTemplate = {
       name: "filepath",
       label: "File Path",
       type: "string",
+      isTitle: true,
       required: true,
     },
   ],
@@ -170,6 +176,66 @@ const DocCardListTemplate = {
 
 // aowendev components follow
 
+const GlossaryTermTemplate = {
+  name: "GlossaryTerm",
+  label: "Glossary Term",
+  ui: {
+  itemProps: (item) => {
+    return { label: item?.title };
+  },},
+  fields: [
+    {
+      name: "termKey",
+      label: "Term Key",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+  ],
+};
+
+const SnippetTemplate = {
+  name: "Snippet",
+  label: "Snippet",
+  ui: {
+  itemProps: (item) => {
+    return { label: item?.title };
+  },},
+  fields: [
+    {
+      name: "filepath",
+      label: "File Path",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+  ],
+};
+
+const VariableSetTemplate = {
+  name: "VariableSet",
+  label: "Variable",
+  ui: {
+  itemProps: (item) => {
+    return { label: item?.title };
+  },},
+  fields: [
+    {
+      name: "setKey",
+      label: "Variable Set",
+      type: "string",
+      required: true,
+    },
+    {
+      name: "variableKey",
+      label: "Variable",
+      type: "string",
+      isTitle: true,
+      required: true,
+    },
+  ],
+};
+
 const CommentsTemplate = {
   name: 'hidden',
   label: 'Comment',
@@ -199,5 +265,8 @@ export const MDXTemplates = [
   CodeBlockTemplate,
   DetailsTemplate,
   DocCardListTemplate,
+  GlossaryTermTemplate,
+  SnippetTemplate,
   TabsTemplate,
+  VariableSetTemplate,
 ];

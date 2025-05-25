@@ -13,7 +13,7 @@ const GlossaryTerm = ({ termKey }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('../reuse/glossaryTerms.json');
+        const response = await fetch('../reuse/glossaryTerms/index.json');
         const jsonData = await response.json();
         const lang = getLangFromPath();
         const entry = jsonData[termKey]?.[lang];

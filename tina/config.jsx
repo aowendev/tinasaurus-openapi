@@ -8,10 +8,6 @@ import { MDXTemplates } from "../src/theme/template";
 import { docusaurusDate, titleFromSlug } from "../util";
 import title from "title";
 
-import { GlossaryTermBlockTemplate } from "../src/components/GlossaryTerm/template";
-import { VariableSetBlockTemplate } from "../src/components/VariableSet/template";
-
-
 // Get doc tags from the JSON file
 import data from "../reuse/tags/index.json";
 
@@ -211,6 +207,81 @@ const DocsCollection = {
       type: "boolean",
       name: "draft",
       label: "Draft",
+    },
+    {
+      type: "boolean",
+      name: "review",
+      label: "In Review",
+    },
+    {
+      type: "boolean",
+      name: "translate",
+      label: "In Translation",
+    },
+    {
+      type: "boolean",
+      name: "approved",
+      label: "Translation Approved",
+    },
+    {
+      type: "boolean",
+      name: "published",
+      label: "Published",
+    },
+    {
+      type: "boolean",
+      name: "unlisted",
+      label: "Unlisted",
+    },
+    {
+      label: "Tags",
+      name: "tags",
+      type: "string",
+      options: allTags,
+      list: true,
+    },
+  ],
+};
+
+const TranslationCollection = {
+  name: "i18n",
+  label: "Translation",
+  path: "i18n",
+  format: "mdx",
+  ui: {
+    defaultItem: {
+      draft: true,
+      review: false,
+      translate: false,
+      approved: false,
+      published: false,
+      unlisted: false,
+    },
+  },
+  fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "Title",
+      isTitle: true,
+      required: true,
+    },
+    {
+      type: "string",
+      name: "description",
+      label: "Description",
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Body",
+      isBody: true,
+      templates: [...MDXTemplates],
+    },
+    {
+      type: "boolean",
+      name: "draft",
+      label: "Draft",
       required: true,
     },
     {
@@ -250,6 +321,80 @@ const DocsCollection = {
 };
 
 // Manage doc tags in a separate collection
+const GlossaryTermCollection = {
+  label: 'Glossary Terms',
+  name: 'glossaryTerm',
+  path: 'static/reuse/glossaryTerms',
+  format: 'json',
+  fields: [
+    {
+      type: "string",
+      name: "_warning",
+      ui: {
+        component: () => {
+          return <RestartWarning />;
+        },
+      },
+    },
+    {
+      type: "object",
+      label: "Tags",
+      name: "tags",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item.name,
+        }),},
+      fields: [
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+        }]},],
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },},
+}
+
+const VariableSetCollection = {
+  label: 'Variable Sets',
+  name: 'variableSet',
+  path: '/static/reuse/variableSets',
+  format: 'json',
+  fields: [
+    {
+      type: "string",
+      name: "_warning",
+      ui: {
+        component: () => {
+          return <RestartWarning />;
+        },
+      },
+    },
+    {
+      type: "object",
+      label: "Tags",
+      name: "tags",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item.name,
+        }),},
+      fields: [
+        {
+          type: "string",
+          label: "Name",
+          name: "name",
+        }]},],
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },},
+}
+
 const TagsCollection = {
   label: 'Tags',
   name: 'tags',
@@ -962,10 +1107,21 @@ export default defineConfig({
       SidebarCollection,
       DocsCollection,
       SnippetsCollection,
+      TranslationCollection,
       PostCollection,
       PagesCollection,
+      GlossaryTermCollection,
+      VariableSetCollection,
       TagsCollection,
       SettingsCollection,
     ],
+  },
+  search: {
+    tina: {
+      indexerToken: 'c72c700ed9905698e5105aff58bd1d51fe653f1b',
+      stopwordLanguages: ['eng'],
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100,
   },
 });
