@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-const getLangFromPath = () => {
-  if (typeof window === "undefined") return "en";
-  const match = window.location.pathname.match(/^\/([a-z]{2})(\/|$)/i);
-  return match ? match[1] : "en";
-};
-
 const VariableSet = ({ setKey, variableKey }) => {
   const [translation, setTranslation] = useState('');
 
@@ -15,7 +9,7 @@ const VariableSet = ({ setKey, variableKey }) => {
         // Use absolute path for fetch in Docusaurus/static
         const response = await fetch('../reuse/variableSets/index.json');
         const jsonData = await response.json();
-        const lang = getLangFromPath();
+        const lang = document.documentElement.lang;
         const translatedValue =
           jsonData?.[setKey]?.[variableKey]?.[lang] ??
           jsonData?.[setKey]?.[variableKey]?.['en'] ??
