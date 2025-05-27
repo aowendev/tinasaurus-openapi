@@ -1,15 +1,19 @@
 import React from "react";
 
 const Snippet = ({ filepath }) => {
+  let lang = document.documentElement.lang;
   let SnippetMDX;
   try {
-    SnippetMDX = require(`@site/reuse/snippets/${filepath}`).default;
+    if (lang !== "en") {
+      SnippetMDX = require(`/i18n/${lang}/docusaurus-plugin-content-docs/current/snippets/${filepath}`).default;
+    } else {
+      SnippetMDX = require(`@site/docs/snippets/${filepath}`).default;
+    }
   } catch (e) {
-    return <div>Error: Snippet not found.</div>;
+      return <div>Error: Snippet not found.</div>;
   }
 
-  // Render the imported MDX component directly
-  return ( <SnippetMDX /> );
+  return <SnippetMDX />;
 };
 
 export default Snippet;

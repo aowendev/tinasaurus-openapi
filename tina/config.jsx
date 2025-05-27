@@ -143,7 +143,7 @@ const PostCollection = {
 const SnippetsCollection = {
   name: "snippets",
   label: "Snippets",
-  path: "reuse/snippets",
+  path: "docs/snippets",
   format: "mdx",
   fields: [
     {
