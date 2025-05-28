@@ -143,9 +143,21 @@ const PostCollection = {
 const SnippetsCollection = {
   name: "snippets",
   label: "Snippets",
-  path: "docs/snippets",
+  path: "reuse/snippets",
   format: "mdx",
   fields: [
+    {
+      type: "string",
+      name: "title",
+      label: "Title",
+      isTitle: true,
+      required: true,
+    },
+    {
+      type: "string",
+      name: "description",
+      label: "Description",
+    },
     {
       type: "rich-text",
       name: "body",
