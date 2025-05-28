@@ -59,7 +59,7 @@ const config: Config = {
   },
   title: docusaurusData.title || "Tinasaurus OpenAPI",
   tagline: docusaurusData.tagline || "CCMS meets docs-as-code",
-  url: docusaurusData.url || "https://aowendev.github.io/tinasaurus-openapi/",
+  url: docusaurusData.url || "https://aowendev.github.io/",
   baseUrl: "/tinasaurus-openapi/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
