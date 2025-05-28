@@ -29,7 +29,10 @@ jobs:
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
           TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
           NODE_OPTIONS: "--max_old_space_size=4096"
-        run: yarn build
+        run: |
+          yarn clean-api-docs all
+          yarn gen-api-docs all
+          yarn build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
