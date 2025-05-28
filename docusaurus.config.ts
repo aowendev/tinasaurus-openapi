@@ -59,7 +59,7 @@ const config: Config = {
   },
   title: docusaurusData.title || "Tinasaurus OpenAPI",
   tagline: docusaurusData.tagline || "CCMS meets docs-as-code",
-  url: docusaurusData.url || "https://aowendev.github.io/",
+  url: docusaurusData.url || "https://aowendev.github.io/tinasaurus-openapi/",
   baseUrl: "/tinasaurus-openapi/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
@@ -137,12 +137,6 @@ const config: Config = {
             label: "OpenAPI",
             position: "left",
             to: "/docs/category/petstore-api",
-          },
-          {
-            type: "doc",
-            docId: "wiki/index",
-            position: "left",
-            label: "Wiki",
           },
 //          {
 //            type: "docsVersionDropdown",
