@@ -138,12 +138,6 @@ const config: Config = {
             position: "left",
             to: "/docs/category/petstore-api",
           },
-          {
-            type: "doc",
-            docId: "wiki/index",
-            position: "left",
-            label: "Wiki",
-          },
 //          {
 //            type: "docsVersionDropdown",
 //            position: "right",
