@@ -17,16 +17,20 @@ It also enables you to set the `Unlisted` flag and a `Translation Approved` flag
 ### Folder structure
 
 ```
-├── /apis: OpenAPI schema 
-├── /blog: blog posts
+├── /apis: OpenAPI schemas
+├── /blog: blog articles
 ├── /docs: user docs
+│   └── /wiki: wiki
+├── /i18n: translation
 ├── /reuse: reusable content
 │   ├── /code: code snippets
 │   ├── /snippets: text snippets
-│   ├── /tags: taxonomy tags
-│   └── /variables: translatable variables
+│   └── /tags: taxonomy tags
 └── /static: static content
-    └─── /img: images (managed through TinaCMS)
+    ├─── /img: images
+    └─── /reuse: reusable content
+         ├── /glossaryTerms: translatable glossary terms
+         └── /variableSets: translatable variable sets
 ```
 
 ![Tinasaurus Demo](demo.png)
