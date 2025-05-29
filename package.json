@@ -1,6 +1,7 @@
 {
   "name": "tinasaurus-openapi",
-  "version": "0.3.7",
+  "version": "0.3.8",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -20,20 +21,24 @@
     "clean-api-docs:version": "docusaurus clean-api-docs:version"
   },
   "dependencies": {
-    "@docusaurus/core": "3.7.0",
-    "@docusaurus/preset-classic": "3.7.0",
-    "@docusaurus/theme-mermaid": "3.7.0",
+    "@docusaurus/core": "3.8.0",
+    "@docusaurus/preset-classic": "3.8.0",
+    "@docusaurus/theme-mermaid": "3.8.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "docusaurus-lunr-search": "^3.6.0",
     "docusaurus-plugin-openapi-docs": "4.3.4",
     "docusaurus-theme-openapi-docs": "4.3.4",
     "prism-react-renderer": "^2.3.0",
-    "raw-loader": "^4.0.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "tinacms": "^2.7.8",
-    "title": "^4.0.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tinacms": "^2.7.8"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.8.0",
+    "@docusaurus/types": "3.8.0",
+    "@tinacms/cli": "^1.9.8", 
+    "@types/node": "^22.13.2"
   },
   "browserslist": {
     "production": [
@@ -42,13 +47,12 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
     ]
   },
-  "devDependencies": {
-    "@tinacms/cli": "^1.9.8",
-    "@types/node": "^22.13.2"
+  "engines": {
+    "node": ">=18.0"
   }
 }
