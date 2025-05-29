@@ -19,7 +19,7 @@ const Snippet = ({ filepath }) => {
           // Try to load translated snippet first
           mod = await import(
             /* webpackInclude: /\.mdx$/ */
-            `@site/i18n/${lang}/docusaurus-plugin-content-docs/current/reuse/snippets/${filepath}`
+            `@site/i18n/${lang}/snippets/${filepath}`
           );
         } else {
           // Fallback to English
