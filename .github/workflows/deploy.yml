@@ -11,18 +11,18 @@ on:
 jobs:
   build:
     name: Build Docusaurus
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 23
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
       - name: Build website
         env:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
@@ -30,8 +30,8 @@ jobs:
           TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
           NODE_OPTIONS: "--max_old_space_size=4096"
         run: |
-          # yarn clean-api-docs all
-          # yarn gen-api-docs all
+          yarn clean-api-docs all
+          yarn gen-api-docs all
           yarn build
 
       - name: Upload Build Artifact
