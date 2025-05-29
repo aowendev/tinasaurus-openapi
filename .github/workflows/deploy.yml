@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+nodename: Deploy to GitHub Pages
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install
       - name: Build website
         env:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
