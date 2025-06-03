@@ -1,11 +1,11 @@
 {
   "label": "Settings",
   "logo": {
-    "alt": "Tina",
-    "src": "/img/logo.svg"
+    "alt": "docStatic",
+    "src": "/img/docstatic.png"
   },
-  "title": "Tinasaurus OpenAPI",
-  "tagline": "CCMS meets docs-as-code",
+  "title": "docStatic",
+  "tagline": "Composable Content Management System",
   "url": "https://aowendev.github.io/",
   "footer": {
     "style": "dark",
@@ -71,6 +71,6 @@
         ]
       }
     ],
-    "copyright": "Andrew Owen. Built with Tinasaurus OpenAPI."
+    "copyright": "Source Solutions, Inc. Built with docStatic."
   }
 }

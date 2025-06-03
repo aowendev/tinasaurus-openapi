@@ -57,13 +57,13 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  title: docusaurusData.title || "Tinasaurus OpenAPI",
-  tagline: docusaurusData.tagline || "CCMS meets docs-as-code",
-  url: docusaurusData.url || "https://aowendev.github.io/tinasaurus-openapi/",
-  baseUrl: "/tinasaurus-openapi/",
+  title: docusaurusData.title || "docStatic",
+  tagline: docusaurusData.tagline || "Composable Content Management System",
+  url: docusaurusData.url || "https://aowendev.github.io/docstatic/",
+  baseUrl: "/docstatic/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/docstatic.png",
 
   // Github pages deployment config.
   projectName: 'aowendev.github.io',
@@ -111,14 +111,14 @@ const config: Config = {
         },
       },
       navbar: {
-        title: docusaurusData.title || "My Site",
+        title: docusaurusData.title || "docStatic",
         logo: {
           alt: docusaurusData?.logo?.alt
             ? docusaurusData?.logo?.alt
-            : "My Logo",
+            : "docStatic",
           src: docusaurusData?.logo?.src
             ? docusaurusData?.logo?.src
-            : "img/logo.svg",
+            : "img/docstatic.png",
         },
         items: [
           {
