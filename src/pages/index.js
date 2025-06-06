@@ -1,7 +1,7 @@
-import React from "react";
-import Layout from "@theme/Layout";
-import { Blocks } from "../components/Blocks";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import React from "react";
+import { Blocks } from "../components/Blocks";
 
 const pageData = require("../../config/homepage/index.json");
 

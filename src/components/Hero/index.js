@@ -1,9 +1,9 @@
-import React from "react";
-import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import styles from "./index.module.css";
-import { getDocPath, titleFromSlug } from "../../../util";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import clsx from "clsx";
+import React from "react";
+import { getDocPath, titleFromSlug } from "../../../util";
+import styles from "./index.module.css";
 
 export const Hero = ({ data, index }) => {
   const { siteConfig } = useDocusaurusContext();

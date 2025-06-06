@@ -116,7 +116,7 @@ const DocCardListTemplate = {
 
 // aowendev components follow
 
-const TabsItemTemplate ={
+const TabsItemTemplate = {
   name: "TabItem",
   label: "Tab Item",
   fields: [
@@ -136,7 +136,7 @@ const TabsItemTemplate ={
       type: "rich-text",
     },
   ],
-}
+};
 
 // fixme: Doesn;t work in the grahpical editor but at least allows content to be valid.
 
@@ -147,7 +147,7 @@ const TabsTemplate = {
       name: "children",
       label: "Tabs",
       type: "rich-text",
-      templates: [ TabsItemTemplate ],
+      templates: [TabsItemTemplate],
     },
   ],
 };
@@ -156,9 +156,10 @@ const GlossaryTermTemplate = {
   name: "GlossaryTerm",
   label: "Glossary Term",
   ui: {
-  itemProps: (item) => {
-    return { label: item?.title };
-  },},
+    itemProps: (item) => {
+      return { label: item?.title };
+    },
+  },
   fields: [
     {
       name: "termKey",
@@ -174,9 +175,10 @@ const SnippetTemplate = {
   name: "Snippet",
   label: "Snippet",
   ui: {
-  itemProps: (item) => {
-    return { label: item?.title };
-  },},
+    itemProps: (item) => {
+      return { label: item?.title };
+    },
+  },
   fields: [
     {
       name: "filepath",
@@ -192,9 +194,10 @@ const VariableSetTemplate = {
   name: "VariableSet",
   label: "Variable",
   ui: {
-  itemProps: (item) => {
-    return { label: item?.title };
-  },},
+    itemProps: (item) => {
+      return { label: item?.title };
+    },
+  },
   fields: [
     {
       name: "setKey",
@@ -213,8 +216,8 @@ const VariableSetTemplate = {
 };
 
 const CommentsTemplate = {
-  name: 'hidden',
-  label: 'Comment',
+  name: "hidden",
+  label: "Comment",
   match: {
     start: "<!--",
     end: "-->",
@@ -235,11 +238,28 @@ const CommentsTemplate = {
   ],
 };
 
+const FootnoteTemplate = {
+  name: "Footnote",
+  label: "Footnote",
+  ui: {
+    itemProps: (item) => {
+      return { label: item?.title };
+    },
+  },
+  fields: [
+    {
+      name: "Number",
+      label: "Number",
+      type: "number",
+    },
+  ],
+};
+
 // Get the last segment of the path as the slug
 const usePageSlug = () => {
   if (typeof window === "undefined") return "";
   const path = window.location.pathname;
-  const segments = path.split('/').filter(Boolean);
+  const segments = path.split("/").filter(Boolean);
   return segments[segments.length - 1] || "";
 };
 
@@ -256,7 +276,7 @@ const ContextHelpTemplate = {
   fields: [
     {
       name: "id",
-      label: "Context Help ID (\<URL>/docs/\<slug>#\<ID>)",
+      label: "Context Help ID (<URL>/docs/<slug>#<ID>)",
       type: "string",
       isTitle: true,
       required: true,
@@ -290,7 +310,7 @@ const FigureTemplate = {
       name: "size",
       label: "Size",
       type: "string",
-    }
+    },
   ],
 };
 
@@ -302,6 +322,7 @@ export const MDXTemplates = [
   DetailsTemplate,
   DocCardListTemplate,
   FigureTemplate,
+  FootnoteTemplate,
   GlossaryTermTemplate,
   SnippetTemplate,
   TabsTemplate,
