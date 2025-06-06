@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 export const YouTubeEmbed = ({ data, index }) => {
   const regex =
     /(youtu.*be.*)\/(watch\?v=|embed\/|v|shorts|)(.*?((?=[&#?])|$))/gm;
-  var videoId = regex.exec(data.url)[3];
+  const videoId = regex.exec(data.url)[3];
   return (
     <section key={index}>
       <div className="container">

@@ -9,10 +9,7 @@ const VariableSet = ({ setKey, variableKey }) => {
         const response = await fetch("../reuse/variableSets/index.json");
         const jsonData = await response.json();
         const lang = document.documentElement.lang;
-        const translatedValue =
-          jsonData?.[setKey]?.[variableKey]?.[lang] ??
-          jsonData?.[setKey]?.[variableKey]?.["en"] ??
-          "";
+        const translatedValue = jsonData?.[setKey]?.[variableKey]?.[lang] ?? "";
         setTranslation(translatedValue);
       } catch (error) {
         setTranslation("");

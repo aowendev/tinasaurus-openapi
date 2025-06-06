@@ -7,7 +7,7 @@ const Feature = ({ image, title, description }) => {
     <div className={clsx("col col--4")}>
       {image && (
         <div className="text--center">
-          <img className={styles.featureSvg} src={image} />
+          <img className={styles.featureSvg} src={image} alt={description} />
         </div>
       )}
       <div className="text--center padding-horiz--md">
