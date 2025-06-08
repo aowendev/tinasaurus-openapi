@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const Snippet = ({ filepath }) => {
   const [SnippetMDX, setSnippetMDX] = useState(null);

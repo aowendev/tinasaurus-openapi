@@ -7,7 +7,7 @@ export const Blocks = ({ blocks }) => {
   return (
     <>
       {blocks
-        ? blocks.map(function (block, i) {
+        ? blocks.map((block, i) => {
             switch (block._template) {
               case "hero":
                 return (

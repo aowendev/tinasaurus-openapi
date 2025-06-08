@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const GlossaryTerm = ({ termKey }) => {
-  const [term, setTerm] = useState('');
-  const [definition, setDefinition] = useState('');
+  const [term, setTerm] = useState("");
+  const [definition, setDefinition] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('../reuse/glossaryTerms/index.json');
+        const response = await fetch("../reuse/glossaryTerms/index.json");
         const jsonData = await response.json();
         const lang = document.documentElement.lang;
         const entry = jsonData[termKey]?.[lang];
         if (entry) {
-          setTerm(entry.term || '');
-          setDefinition(entry.definition || '');
+          setTerm(entry.term || "");
+          setDefinition(entry.definition || "");
         } else {
-          setTerm('');
-          setDefinition('');
+          setTerm("");
+          setDefinition("");
         }
       } catch (error) {
-        console.error('Error fetching translation:', error);
-        setTerm('');
-        setDefinition('');
+        console.error("Error fetching translation:", error);
+        setTerm("");
+        setDefinition("");
       }
     };
 
@@ -29,7 +29,10 @@ const GlossaryTerm = ({ termKey }) => {
   }, [termKey]);
 
   return (
-    <span title={definition} style={{ textDecoration: 'underline', cursor: 'help' }}>
+    <span
+      title={definition}
+      style={{ textDecoration: "underline", cursor: "help" }}
+    >
       {term}
     </span>
   );

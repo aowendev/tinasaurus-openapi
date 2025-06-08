@@ -4,7 +4,7 @@
  * work well for content-centric websites.
  */
 
- @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 /* You can override the default Infima variables here. */
 :root {
@@ -19,11 +19,11 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-family-base: "Arial", sans-serif;
-  --ifm-font-family-monospace: "IBM Plex Mono",  "Courier New", monospace;
+  --ifm-font-family-monospace: "IBM Plex Mono", "Courier New", monospace;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -36,12 +36,12 @@
 }
 
 /* Sidebar Method labels */
-.api-method>.menu__link {
+.api-method > .menu__link {
   align-items: center;
   justify-content: start;
 }
 
-.api-method>.menu__link::before {
+.api-method > .menu__link::before {
   width: 50px;
   height: 20px;
   font-size: 12px;
@@ -57,63 +57,62 @@
   color: white;
 }
 
-.get>.menu__link::before {
+.get > .menu__link::before {
   content: "get";
   background-color: rgb(47, 129, 50);
 }
 
-.put>.menu__link::before {
+.put > .menu__link::before {
   content: "put";
   background-color: rgb(149, 80, 124);
 }
 
-.post>.menu__link::before {
+.post > .menu__link::before {
   content: "post";
   background-color: rgb(24, 111, 175);
 }
 
-.delete>.menu__link::before {
+.delete > .menu__link::before {
   content: "del";
   background-color: rgb(204, 51, 51);
 }
 
-.patch>.menu__link::before {
+.patch > .menu__link::before {
   content: "patch";
   background-color: rgb(191, 88, 29);
 }
 
 /* GET */
 .badge--primary {
-  background-color:rgb(47, 129, 50);
-  border-color:rgb(47, 129, 50);
+  background-color: rgb(47, 129, 50);
+  border-color: rgb(47, 129, 50);
   color: white;
 }
 
 /* PUT */
 .badge--info {
-  background-color:rgb(149, 80, 124);
-  border-color:rgb(149, 80, 124);
+  background-color: rgb(149, 80, 124);
+  border-color: rgb(149, 80, 124);
   color: white;
 }
 
 /* POST */
 .badge--success {
-  background-color:rgb(24, 111, 175);
-  border-color:rgb(24, 111, 175);
+  background-color: rgb(24, 111, 175);
+  border-color: rgb(24, 111, 175);
   color: white;
 }
 
 /* DEL */
 .badge--danger {
-  background-color:rgb(204, 51, 51);
-  border-color:rgb(204, 51, 51);
+  background-color: rgb(204, 51, 51);
+  border-color: rgb(204, 51, 51);
   color: white;
 }
 
 /* PATCH */
 .badge--warning {
-  background-color:rgb(191, 88, 29);
-  border-color:rgb(191, 88, 29);
+  background-color: rgb(191, 88, 29);
+  border-color: rgb(191, 88, 29);
   color: white;
 }
-

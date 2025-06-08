@@ -1,26 +1,26 @@
 import React from "react";
-import { defineConfig, TextField } from "tinacms";
+import { TextField, defineConfig } from "tinacms";
 import { ReferenceField } from "tinacms";
+import title from "title";
 import { FeaturesBlockTemplate } from "../src/components/Features/template";
 import { HeroBlockTemplate } from "../src/components/Hero/template";
 import { YouTubeEmbedBlockTemplate } from "../src/components/YouTubeEmbed/template";
 import { MDXTemplates } from "../src/theme/template";
 import { docusaurusDate, titleFromSlug } from "../util";
-import title from "title";
 
 // Get doc tags from the JSON file
 import data from "../reuse/tags/index.json";
 
 const allTags = [];
 
-Object.keys(data.tags).forEach(key => {
-    allTags.push(data.tags[key].name); 
-  });
+Object.keys(data.tags).forEach((key) => {
+  allTags.push(data.tags[key].name);
+});
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
-//  process.env.VERCEL_GIT_COMMIT_REF ||
-//  process.env.HEAD ||
+  //  process.env.VERCEL_GIT_COMMIT_REF ||
+  //  process.env.HEAD ||
   "main";
 
 const WarningIcon = (props) => {
@@ -135,7 +135,7 @@ const PostCollection = {
       name: "body",
       label: "Body",
       isBody: true,
-      templates: [...MDXTemplates,],
+      templates: [...MDXTemplates],
     },
   ],
 };
@@ -322,10 +322,10 @@ const TranslationCollection = {
 
 // Manage doc tags in a separate collection
 const GlossaryTermCollection = {
-  label: 'Glossary Terms',
-  name: 'glossaryTerm',
-  path: 'static/reuse/glossaryTerms',
-  format: 'json',
+  label: "Glossary Terms",
+  name: "glossaryTerm",
+  path: "static/reuse/glossaryTerms",
+  format: "json",
   fields: [
     {
       type: "string",
@@ -344,25 +344,30 @@ const GlossaryTermCollection = {
       ui: {
         itemProps: (item) => ({
           label: item.name,
-        }),},
+        }),
+      },
       fields: [
         {
           type: "string",
           label: "Name",
           name: "name",
-        }]},],
+        },
+      ],
+    },
+  ],
   ui: {
     allowedActions: {
       create: false,
       delete: false,
-    },},
-}
+    },
+  },
+};
 
 const VariableSetCollection = {
-  label: 'Variable Sets',
-  name: 'variableSet',
-  path: '/static/reuse/variableSets',
-  format: 'json',
+  label: "Variable Sets",
+  name: "variableSet",
+  path: "/static/reuse/variableSets",
+  format: "json",
   fields: [
     {
       type: "string",
@@ -381,25 +386,30 @@ const VariableSetCollection = {
       ui: {
         itemProps: (item) => ({
           label: item.name,
-        }),},
+        }),
+      },
       fields: [
         {
           type: "string",
           label: "Name",
           name: "name",
-        }]},],
+        },
+      ],
+    },
+  ],
   ui: {
     allowedActions: {
       create: false,
       delete: false,
-    },},
-}
+    },
+  },
+};
 
 const TagsCollection = {
-  label: 'Tags',
-  name: 'tags',
-  path: 'reuse/tags',
-  format: 'json',
+  label: "Tags",
+  name: "tags",
+  path: "reuse/tags",
+  format: "json",
   fields: [
     {
       type: "string",
@@ -418,19 +428,24 @@ const TagsCollection = {
       ui: {
         itemProps: (item) => ({
           label: item.name,
-        }),},
+        }),
+      },
       fields: [
         {
           type: "string",
           label: "Name",
           name: "name",
-        }]},],
+        },
+      ],
+    },
+  ],
   ui: {
     allowedActions: {
       create: false,
       delete: false,
-    },},
-}
+    },
+  },
+};
 
 const DocLinkTemplate = {
   name: "doc",
@@ -441,8 +456,8 @@ const DocLinkTemplate = {
         label: item?.label
           ? item?.label
           : item?.document
-          ? titleFromSlug(item?.document)
-          : item.name,
+            ? titleFromSlug(item?.document)
+            : item.name,
       };
     },
   },
@@ -1119,7 +1134,7 @@ export default defineConfig({
   search: {
     tina: {
       indexerToken: process.env.TINA_SEARCH_TOKEN, // Search token from tina.io
-      stopwordLanguages: ['eng'],
+      stopwordLanguages: ["eng"],
     },
     indexBatchSize: 100,
     maxSearchIndexFieldLength: 100,

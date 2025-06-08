@@ -1,7 +1,6 @@
 {
   "name": "docstatic",
-  "version": "0.3.8",
-  "license": "MIT",
+  "version": "0.3.7",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -18,7 +17,9 @@
     "gen-api-docs": "docusaurus gen-api-docs",
     "clean-api-docs": "docusaurus clean-api-docs",
     "gen-api-docs:version": "docusaurus gen-api-docs:version",
-    "clean-api-docs:version": "docusaurus clean-api-docs:version"
+    "clean-api-docs:version": "docusaurus clean-api-docs:version",
+    "lint": "biome check src/ tina/",
+    "lint:fix": "biome check src/ tina/ --fix" 
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",
@@ -51,7 +52,8 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
     "@docusaurus/types": "^3.7.0",
-    "@tinacms/cli": "^1.9.8"
+    "@tinacms/cli": "^1.9.8",
+    "@biomejs/biome": "^1.9.4"
   },
   "engines": {
     "node": ">=18.0"
