@@ -19,7 +19,6 @@ const GlossaryTerm = ({ termKey }) => {
           setDefinition("");
         }
       } catch (error) {
-        console.error("Error fetching translation:", error);
         setTerm("");
         setDefinition("");
       }

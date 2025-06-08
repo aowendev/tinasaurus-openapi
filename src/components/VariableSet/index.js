@@ -11,11 +11,10 @@ const VariableSet = ({ setKey, variableKey }) => {
         const lang = document.documentElement.lang;
         const translatedValue =
           jsonData?.[setKey]?.[variableKey]?.[lang] ??
-          jsonData?.[setKey]?.[variableKey]?.["en"] ??
+          jsonData?.[setKey]?.[variableKey]?.en ??
           "";
         setTranslation(translatedValue);
       } catch (error) {
-        console.error("Error fetching translation:", error);
         setTranslation("");
       }
     };

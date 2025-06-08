@@ -1,7 +1,7 @@
 import React from "react";
 
 const Figure = ({ img, caption, size }) => {
-  const src = ".." + img;
+  const src = `..${img}`;
 
   return (
     <div class="zoom">

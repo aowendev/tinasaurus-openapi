@@ -10,14 +10,12 @@ export default function Home() {
 
   return (
     <Layout
-      title={pageData && pageData.title ? pageData.title : siteConfig.title}
+      title={pageData?.title ? pageData.title : siteConfig.title}
       description={
-        pageData && pageData.description
-          ? pageData.description
-          : siteConfig.tagline
+        pageData?.description ? pageData.description : siteConfig.tagline
       }
     >
-      {pageData && pageData.blocks ? <Blocks blocks={pageData.blocks} /> : null}
+      {pageData?.blocks ? <Blocks blocks={pageData.blocks} /> : null}
     </Layout>
   );
 }
