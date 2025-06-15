@@ -38,6 +38,9 @@
           "tag": "reuse"
         },
         {
+          "tag": "search"
+        },
+        {
           "tag": "taxonomy"
         },
         {
@@ -53,6 +56,9 @@
     },
     {
       "tag": "testing"
+    },
+    {
+      "tag": "wiki"
     }
   ]
 }

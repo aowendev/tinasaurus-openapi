@@ -128,20 +128,18 @@ const PostCollection = {
       },
     },
     {
-      label: "Tags",
-      name: "tags",
-      type: "string",
-      list: true,
-      ui: {
-        component: "tags",
-      },
-    },
-    {
       type: "rich-text",
       name: "body",
       label: "Body",
       isBody: true,
       templates: [...MDXTemplates],
+    },
+    {
+      label: "Tags",
+      name: "tags",
+      type: "string",
+      options: allTags,
+      list: true,
     },
   ],
 };
