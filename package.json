@@ -1,6 +1,6 @@
 {
   "name": "docstatic",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -19,12 +19,12 @@
     "gen-api-docs:version": "docusaurus gen-api-docs:version",
     "clean-api-docs:version": "docusaurus clean-api-docs:version",
     "lint": "biome check src/ tina/",
-    "lint:fix": "biome check src/ tina/ --fix" 
+    "lint:fix": "biome check src/ tina/ --fix"
   },
   "dependencies": {
-    "@docusaurus/core": "3.7.0",
-    "@docusaurus/preset-classic": "3.7.0",
-    "@docusaurus/theme-mermaid": "3.7.0",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@docusaurus/theme-mermaid": "^3.8.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "docusaurus-lunr-search": "^3.6.0",
@@ -50,10 +50,10 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.7.0",
-    "@docusaurus/types": "^3.7.0",
-    "@tinacms/cli": "^1.9.8",
-    "@biomejs/biome": "^1.9.4"
+    "@biomejs/biome": "^1.9.4",
+    "@docusaurus/module-type-aliases": "^3.8.1",
+    "@docusaurus/types": "^3.8.1",
+    "@tinacms/cli": "^1.9.8"
   },
   "engines": {
     "node": ">=18.0"
