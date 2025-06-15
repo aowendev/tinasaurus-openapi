@@ -1,31 +1,31 @@
 {
   "label": "Homepage",
-  "title": "docStatic",
-  "description": "Composable Content Management System",
+  "title": "Tinasaurus OpenAPI",
+  "description": "CCMS meets docs-as-code",
   "blocks": [
     {
       "title": "docStatic",
-      "subtitle": "Composable Content Management System",
-      "document": "docs/quick-start.mdx",
-      "documentLabel": "Quick Start - 5min ⏱️",
+      "subtitle": "Composable Documentation Solution",
+      "document": "docs/quick-start/quick-start.mdx",
+      "documentLabel": "Quick Start",
       "_template": "hero"
     },
     {
       "items": [
         {
           "title": "For Writers",
-          "description": "CCMS features and a graphical editor.",
-          "image": "./img/undraw_docusaurus_react.svg"
+          "description": "CCMS features and a graphical editor.\n",
+          "image": "/img./undraw_docusaurus_react.svg"
         },
         {
           "title": "For Developers",
-          "description": "Git, Markdown, OpenAPI and React.",
-          "image": "./img/undraw_docusaurus_tree.svg"
+          "description": "Git, Markdown, OpenAPI and React.\n",
+          "image": "/img./undraw_docusaurus_tree.svg"
         },
         {
           "title": "For Users",
-          "description": "Responsive documentation websites.",
-          "image": "./img/undraw_docusaurus_mountain.svg"
+          "description": "Responsive documentation websites.\n",
+          "image": "/img./undraw_docusaurus_mountain.svg"
         }
       ],
       "_template": "features"
