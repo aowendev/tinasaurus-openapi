@@ -326,49 +326,6 @@ const TranslationCollection = {
   ],
 };
 
-// Manage doc tags in a separate collection
-const GlossaryTermCollection = {
-  label: "Glossary Terms",
-  name: "glossaryTerm",
-  path: "static/reuse/glossaryTerms",
-  format: "json",
-  fields: [
-    {
-      type: "string",
-      name: "_warning",
-      ui: {
-        component: () => {
-          return <RestartWarning />;
-        },
-      },
-    },
-    {
-      type: "object",
-      label: "Tags",
-      name: "tags",
-      list: true,
-      ui: {
-        itemProps: (item) => ({
-          label: item.name,
-        }),
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-        },
-      ],
-    },
-  ],
-  ui: {
-    allowedActions: {
-      create: false,
-      delete: false,
-    },
-  },
-};
-
 const DocLinkTemplate = {
   name: "doc",
   label: "Doc Link",
@@ -1075,7 +1032,7 @@ const VariableSetCollection = {
               list: true,
               ui: {
                 itemProps: (item) => ({
-                  label: item.lang + ": " + item.value,
+                  label: item.lang + ': ' + item.value,
                 }),
               },
               fields: [
@@ -1176,6 +1133,105 @@ const TaxonomyCollection = {
     },
   ],
 
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
+};
+
+// glossary terms
+
+const GlossaryTermTranslationTemplate = {
+  name: "translation",
+  label: "Translation",
+  ui: {
+    itemProps: (item) => ({
+      label: item.term + ": " + item.definition,
+    }),
+  },
+  fields: [
+    {
+      type: "string",
+      name: "term",
+      label: "Term",
+      required: true,
+    },
+    {
+      type: "string",
+      name: "definition",
+      label: "Definition",
+      required: true,
+    },
+  ],
+};
+
+const GlossaryTermLanguageTemplate = {
+  name: "language",
+  label: "Language",
+              ui: {
+                itemProps: (item) => ({
+                  label: item.lang + ': ' + item.translations[0].term,
+                }),
+              },
+  fields: [
+    {
+      type: "string",
+      name: "lang",
+      label: "Language Code",
+      required: true,
+    },
+    {
+      type: "object",
+      name: "translations",
+      label: "Definitions",
+      list: true,
+      templates: [GlossaryTermTranslationTemplate],
+    },
+  ],
+};
+
+const GlossaryTermTemplate = {
+  name: "glossaryTerm",
+  label: "Glossary Term",
+      ui: {
+        itemProps: (item) => ({
+          label: item?.key,
+        }),
+      },
+  fields: [
+    {
+      type: "string",
+      name: "key",
+      label: "Key",
+      isTitle: true,
+      required: true,
+    },
+    {
+      type: "object",
+      name: "languages",
+      label: "Translations",
+      list: true,
+      templates: [GlossaryTermLanguageTemplate],
+    },
+  ],
+};
+
+const GlossaryTermCollection = {
+  label: "Glossary Terms",
+  name: "glossaryTerms",
+  path: "static/reuse/glossaryTerms",
+  format: "json",
+  fields: [
+    {
+      type: "object",
+      name: "glossaryTerms",
+      label: "Glossary Terms",
+      list: true,
+      templates: [GlossaryTermTemplate],
+    },
+  ],
   ui: {
     allowedActions: {
       create: false,

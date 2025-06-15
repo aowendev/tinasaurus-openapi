@@ -9,18 +9,30 @@ const GlossaryTerm = ({ termKey }) => {
       try {
         const response = await fetch("../reuse/glossaryTerms/index.json");
         const jsonData = await response.json();
-        const lang = document.documentElement.lang;
-        const entry = jsonData[termKey]?.[lang];
-        if (entry) {
-          setTerm(entry.term || "");
-          setDefinition(entry.definition || "");
-        } else {
-          setTerm("");
-          setDefinition("");
-        }
+        const lang = document.documentElement.lang || "en";
+
+        // Find the glossary term by key
+        const entry = Array.isArray(jsonData.glossaryTerms)
+          ? jsonData.glossaryTerms.find((t) => t.key === termKey)
+          : null;
+
+        // Find the language object
+        const langObj = entry && Array.isArray(entry.languages)
+          ? entry.languages.find((l) => l.lang === lang) ||
+            entry.languages.find((l) => l.lang === "en")
+          : null;
+
+        // Find the first translation (if any)
+        const translation =
+          langObj && Array.isArray(langObj.translations)
+            ? langObj.translations[0]
+            : null;
+
+        setTerm(translation?.term || "");
+        setDefinition(translation?.definition || "");
       } catch (error) {
-        setTerm("");
-        setDefinition("");
+        setTerm("TERM NOT FOUND");
+        setDefinition("NOT FOUND");
       }
     };
 
