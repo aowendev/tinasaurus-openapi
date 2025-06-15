@@ -1,6 +1,6 @@
 ---
-title: Tutorial Intro
-description: Tutorial Intro
+title: Quick Start
+description: Quick Start
 draft: false
 review: false
 translate: false
@@ -9,46 +9,154 @@ published: false
 unlisted: false
 ---
 
-# Tutorial Intro
+# docStatic
 
-Let's discover **Docusaurus in less than 5 minutes**.
+An example [Docusaurus 3](https://docusaurus.io/) documentation site with [TinaCMS](https://tina.io/) (including tag management), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) charts, [Lunr](https://lunrjs.com/) search integration and [Raw Loader](https://github.com/webpack-contrib/raw-loader) for code snippets.
 
-## Getting Started
+The project was created by creating a new Docusaurus v3 site with Palo Alto Networks' [OpenAPI plugin](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs) and merging [Tinasaurus](https://github.com/tinacms/tinasaurus) to create a working config.
 
-Get started by **creating a new site**.
+**Note**: Lunr search is available only in production.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+This demo includes the use of snippets (partials), code snippets and variables (on the *Test Page*). It also includes an example  workflow for the *Docs* collection in Tina:
 
-### What you'll need
+`Draft` → `In Review` → `In Translation` → `Published`
 
-* [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  * When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+It also enables you to set the `Unlisted` flag and a `Translation Approved` flag from Tina.
 
-## Generate a new site
+### Folder structure
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```
+├── /apis: OpenAPI schemas
+├── /blog: blog articles
+├── /docs: user docs
+│   └── /wiki: wiki
+├── /i18n: translation
+├── /reuse: reusable content
+│   ├── /code: code snippets
+│   ├── /snippets: text snippets
+│   └── /taxonomy: taxonomy tags
+└── /static: static content
+    ├─── /img: images
+    └─── /reuse: reusable content
+         ├── /glossaryTerms: translatable glossary terms
+         └── /variableSets: translatable variable sets
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+![Tinasaurus Demo](demo.png)
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+## 🔧 Local development
 
-## Start your site
+```shell
+# clone the repository
+git clone git@github.com:aowendev/docstatic.git
 
-Run the development server:
+# cd in the project directory
+$ yarn
 
-```bash
-cd my-website
-npm run start
+# Start local dev server
+$ yarn dev
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+This will install dependencies and open the website in your browser.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at [http://localhost:3000/](http://localhost:3000/).
+Visit the CMS at [http://localhost:3000/docstatic/admin](http://localhost:3000/docstatic/admin) to start editing.
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+### Generating OpenAPI Docs
+
+To generate all OpenAPI docs, run this command from the root directory of your project:
+
+```
+yarn gen-api-docs all
+```
+
+> This will generate API docs for all of the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
+
+You can also generate OpenAPI docs for a single path or OAS by specifying the unique `id`:
+
+```
+yarn gen-api-docs <id>
+```
+
+Example:
+
+```bash
+yarn gen-api-docs petstore
+```
+
+> The example above will only generate API docs relative to `petstore`.
+
+If you have multiple versions of the same API, `gen-api-docs` only generates the latest. To generate all versions, use the `--all-versions` flag.
+
+Example:
+
+```bash
+yarn gen-api-docs all --all-versions
+```
+
+> This will generate API docs for all versions of all the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
+
+### Cleaning API Docs
+
+To clean/remove all API Docs, run this command from the root directory of your project:
+
+```bash
+yarn clean-api-docs all
+```
+
+You can also remove a particular set of API docs by specifying the unique `id` of your desired spec instance.
+
+```bash
+yarn clean-api-docs <id>
+```
+
+Example:
+
+```bash
+yarn clean-api-docs petstore
+```
+
+> The example above will remove all API docs relative to `burgers`.
+
+If you have multiple versions of the same API, `clean-api-docs` only cleans the latest. To clean all versions, use the `--all-versions` flag.
+
+Example:
+
+```bash
+yarn clean-api-docs all --all-versions
+```
+
+> This will clean API docs for all versions of all the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
+
+### Versioning OpenAPI docs
+
+To generate *all* versioned OpenAPI docs, run this command from the root directory of your project:
+
+```bash
+yarn gen-api-docs:version <id>:all
+```
+
+Example:
+
+```bash
+yarn gen-api-docs:version petstore:all
+```
+
+> This will generate API docs for all of the OpenAPI specification (OAS) files referenced in your `versions` config and will also generate a `versions.json` file.
+
+> Substitue `all` with a specific version ID to generate/clean a specific version. Generating for `all` or a specific version ID will automatically update the `versions.json` file.
+
+### Build
+
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service. For examlpe:
+
+```
+npm run serve
+```
+
+### Deployment
+
+To deploy to production and support editing on your live website (at `your-company.github.io/baseurl/admin`), follow the steps from the TinaCMS to [deploy to GitHub pages](https://tina.io/docs/tina-cloud/deployment-options/github-pages).
