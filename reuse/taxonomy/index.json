@@ -1,30 +1,58 @@
 {
   "taxonomy": [
     {
-      "tag": "l1-a",
+      "tag": "blog",
       "children": [
         {
-          "tag": "l2-a",
-          "children": [
-            {
-              "tag": "l3-a"
-            }
-          ]
+          "tag": "docstatic"
+        },
+        {
+          "tag": "hello"
         }
       ]
     },
     {
-      "tag": "l1-b",
+      "tag": "docs",
       "children": [
         {
-          "tag": "l2-b",
+          "tag": "quick-start"
+        },
+        {
+          "tag": "author",
           "children": [
             {
-              "tag": "l3-b"
+              "tag": "create-a-document"
             }
           ]
+        },
+        {
+          "tag": "diagram"
+        },
+        {
+          "tag": "media"
+        },
+        {
+          "tag": "open-api"
+        },
+        {
+          "tag": "reuse"
+        },
+        {
+          "tag": "taxonomy"
+        },
+        {
+          "tag": "translate"
+        },
+        {
+          "tag": "publish"
+        },
+        {
+          "tag": "version"
         }
       ]
+    },
+    {
+      "tag": "testing"
     }
   ]
 }
