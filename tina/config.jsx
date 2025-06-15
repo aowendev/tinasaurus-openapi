@@ -8,14 +8,20 @@ import { YouTubeEmbedBlockTemplate } from "../src/components/YouTubeEmbed/templa
 import { MDXTemplates } from "../src/theme/template";
 import { docusaurusDate, titleFromSlug } from "../util";
 
-// Get doc tags from the JSON file
-import data from "../reuse/tags/index.json";
+// get doc tags from the taxonomy JSON file
+import data from "../reuse/taxonomy/index.json";
 
 const allTags = [];
 
-Object.keys(data.tags).forEach((key) => {
-  allTags.push(data.tags[key].name);
-});
+function collectTags(nodes) {
+  if (!Array.isArray(nodes)) return;
+  nodes.forEach((node) => {
+    if (node.tag) allTags.push(node.tag);
+    if (node.children) collectTags(node.children);
+  });
+}
+
+collectTags(data.taxonomy);
 
 // Your hosting provider likely exposes this as an environment variable
 const branch =
@@ -363,94 +369,10 @@ const GlossaryTermCollection = {
   },
 };
 
-const VariableSetCollection = {
-  label: "Variable Sets",
-  name: "variableSet",
-  path: "/static/reuse/variableSets",
-  format: "json",
-  fields: [
-    {
-      type: "string",
-      name: "_warning",
-      ui: {
-        component: () => {
-          return <RestartWarning />;
-        },
-      },
-    },
-    {
-      type: "object",
-      label: "Tags",
-      name: "tags",
-      list: true,
-      ui: {
-        itemProps: (item) => ({
-          label: item.name,
-        }),
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-        },
-      ],
-    },
-  ],
-  ui: {
-    allowedActions: {
-      create: false,
-      delete: false,
-    },
-  },
-};
-
-const TagsCollection = {
-  label: "Tags",
-  name: "tags",
-  path: "reuse/tags",
-  format: "json",
-  fields: [
-    {
-      type: "string",
-      name: "_warning",
-      ui: {
-        component: () => {
-          return <RestartWarning />;
-        },
-      },
-    },
-    {
-      type: "object",
-      label: "Tags",
-      name: "tags",
-      list: true,
-      ui: {
-        itemProps: (item) => ({
-          label: item.name,
-        }),
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Name",
-          name: "name",
-        },
-      ],
-    },
-  ],
-  ui: {
-    allowedActions: {
-      create: false,
-      delete: false,
-    },
-  },
-};
-
 const DocLinkTemplate = {
   name: "doc",
   label: "Doc Link",
-  ui: {
+              ui: {
     itemProps: (item) => {
       return {
         label: item?.label
@@ -460,23 +382,23 @@ const DocLinkTemplate = {
             : item.name,
       };
     },
-  },
-  fields: [
-    {
+              },
+              fields: [
+                {
       label: "Document",
       name: "document",
       type: "reference",
       collections: ["doc"],
       isTitle: true,
-      required: true,
-    },
-    {
+                  required: true,
+                },
+                {
       name: "label",
       label: "Label",
       description: "By default this is the document title",
-      type: "string",
-    },
-  ],
+                  type: "string",
+        },
+      ],
 };
 
 const ExternalLinkTemplate = {
@@ -1101,6 +1023,173 @@ const PagesCollection = {
   ],
 };
 
+// DocStatic Collections
+
+// Variable Sets
+const VariableSetCollection = {
+  label: "Variable Sets",
+  name: "variableSets",
+  path: "static/reuse/variableSets",
+  format: "json",
+  fields: [
+    {
+      type: "object",
+      label: "Variable Sets",
+      name: "variableSets",
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          label: item.name,
+        }),
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Variable Set Name",
+          name: "name",
+          isTitle: true,
+          required: true,
+        },
+        {
+          type: "object",
+          label: "Variables",
+          name: "variables",
+          list: true,
+          ui: {
+            itemProps: (item) => ({
+              label: item.key,
+            }),
+          },
+          fields: [
+            {
+              type: "string",
+              label: "Key",
+              name: "key",
+              isTitle: true,
+              required: true,
+            },
+            {
+              type: "object",
+              label: "Translations",
+              name: "translations",
+              list: true,
+              ui: {
+                itemProps: (item) => ({
+                  label: item.lang + ": " + item.value,
+                }),
+              },
+              fields: [
+                {
+                  type: "string",
+                  label: "Language",
+                  name: "lang",
+                  required: true,
+                },
+                {
+                  type: "string",
+                  label: "Value",
+                  name: "value",
+                  required: true,
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
+};
+
+// taxonomy tags to a depth of three levels
+
+const TaxonomyCollection = {
+  name: "taxonomy",
+  label: "Taxonomy",
+  path: "reuse/taxonomy",
+  format: "json",
+  fields: [
+     {
+      type: "object",
+      list: true,
+      name: "taxonomy",
+      label: "Taxonomy",
+      ui: {
+        itemProps: (item) => ({
+          label: item?.tag,
+        }),
+      },
+      fields: [
+        {
+          type: "string",
+          name: "tag",
+          label: "Tag",
+          isTitle: true,
+          required: true,
+        },
+        {
+          type: "object",
+          list: true,
+          name: "children",
+          label: "Children",
+          ui: {
+            itemProps: (item) => ({
+              label: item?.tag ? item.tag : item.name,
+            }),
+          },
+          fields: [
+        {
+          type: "string",
+          name: "tag",
+          label: "Tag",
+          isTitle: true,
+          required: true,
+        },
+        {
+          type: "object",
+          list: true,
+          name: "children",
+          label: "Children",
+          ui: {
+            itemProps: (item) => ({
+              label: item?.tag ? item.tag : item.name,
+            }),
+          },
+          fields: [
+        {
+          type: "string",
+          name: "tag",
+          label: "Tag",
+          isTitle: true,
+          required: true,
+        },
+          ]          },
+    
+      ],
+        },
+      ],
+    },
+  ],
+            
+  ui: {
+    allowedActions: {
+      create: false,
+      delete: false,
+    },
+  },
+};
+
+
+
+
+
+
+
 export default defineConfig({
   branch,
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID, // Get this from tina.io
@@ -1127,7 +1216,7 @@ export default defineConfig({
       PagesCollection,
       GlossaryTermCollection,
       VariableSetCollection,
-      TagsCollection,
+      TaxonomyCollection,
       SettingsCollection,
     ],
   },

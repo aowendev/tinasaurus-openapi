@@ -1,0 +1,30 @@
+{
+  "taxonomy": [
+    {
+      "tag": "l1-a",
+      "children": [
+        {
+          "tag": "l2-a",
+          "children": [
+            {
+              "tag": "LevelThreeTagA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "l1-b",
+      "children": [
+        {
+          "tag": "l2-b",
+          "children": [
+            {
+              "tag": "l3-b"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

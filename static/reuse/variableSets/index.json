@@ -1,8 +1,40 @@
 {
-  "writing-terms": {
-    "single-sourcing": {
-        "en": "single sourcing",
-        "fr": "approvisionnement unique"
+  "variableSets": [
+    {
+      "name": "writing-terms",
+      "variables": [
+        {
+          "key": "single-sourcing",
+          "translations": [
+            {
+              "lang": "en",
+              "value": "single sourcing"
+            },
+            {
+              "lang": "fr",
+              "value": "approvisionnement unique"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "languages",
+      "variables": [
+        {
+          "key": "French",
+          "translations": [
+            {
+              "lang": "en",
+              "value": "French"
+            },
+            {
+              "lang": "fr",
+              "value": "Français"
+            }
+          ]
+        }
+      ]
     }
-  }
+  ]
 }
