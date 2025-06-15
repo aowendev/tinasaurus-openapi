@@ -14,6 +14,11 @@
         "title": "Docs",
         "items": [
           {
+            "label": "docStatic",
+            "to": "docs/quick-start/quick-start.mdx",
+            "_template": "internal"
+          },
+          {
             "label": "Docusaurus",
             "href": "https://docusaurus.io/docs",
             "_template": "external"
@@ -28,6 +33,11 @@
       {
         "title": "Community",
         "items": [
+          {
+            "label": "docStatic",
+            "href": "https://github.com/aowendev/docstatic/discussions",
+            "_template": "external"
+          },
           {
             "label": "Docusaurus",
             "href": "https://discordapp.com/invite/docusaurus",
@@ -44,6 +54,11 @@
         "title": "Blog",
         "items": [
           {
+            "label": "docStatic",
+            "href": "https://aowendev.github.io/docstatic/blog",
+            "_template": "external"
+          },
+          {
             "label": "Docusarus",
             "href": "https://docusaurus.io/blog",
             "_template": "external"
@@ -58,6 +73,11 @@
       {
         "title": "GitHub",
         "items": [
+          {
+            "label": "docStatic",
+            "href": "https://github.com/aowendev/docstatic",
+            "_template": "external"
+          },
           {
             "label": "Docusarus",
             "href": "https://github.com/facebook/docusaurus",

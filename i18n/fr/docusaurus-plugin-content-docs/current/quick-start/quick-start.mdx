@@ -1,54 +1,157 @@
 ---
-title: Tutorial Intro
-description: Tutorial Intro
-draft: false
-review: false
-translate: false
-approved: false
-published: false
-unlisted: false
+title: Démarrage rapide
+description: Démarrage rapide
+tags:
+  - docs
+  - quick-start
 ---
 
-# Tutoriel d'introduction
+# docStatic
 
-Découvrons **Docusaurus en moins de 5 minutes**.
+Une solution de documentation composable basée sur [Docusaurus 3](https://docusaurus.io/) et [TinaCMS](https://tina.io/) (y compris la gestion des balises), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) graphiques, [Lunr](https://lunrjs.com/) intégration de la recherche et [Raw Loader](https://github.com/webpack-contrib/raw-loader) pour les extraits de code.
 
-## Pour commencer
+Le projet a été créé en créant un nouveau site Docusaurus v3 avec le [OpenAPI plugin](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs) de Palo Alto Networks et en fusionnant [Tinasaurus](https://github.com/tinacms/tinasaurus) pour créer une configuration fonctionnelle.
 
-Commencez par **créer un nouveau site**.
+**Note** : La recherche Lunr n'est disponible qu'en production.
 
-Ou **essayez Docusaurus immédiatement** avec **[docusaurus.new](https://docusaurus.new)**.
+Cette démo inclut l'utilisation d'extraits (partiels), d'extraits de code et de variables (sur la [page de test](test-page)). Elle inclut un exemple de flux de travail pour la collection *Docs* dans Tina :
 
-### Ce dont vous aurez besoin
+`Draft` → `In Review` → `In Translation` → `Published`
 
-* Node.js](https://nodejs.org/en/download/) version 16.14 ou supérieure :
-  * Lors de l'installation de Node.js, il est recommandé de cocher toutes les cases relatives aux dépendances.
+Il vous permet de définir le drapeau `Unlisted` et un drapeau `Translation Approved` à partir de Tina.
 
-## Générer un nouveau site
+## Développement local
 
-Générer un nouveau site Docusaurus en utilisant le **modèle classique**.
+```shell
+# cloner le dépôt
+git clone git@github.com:aowendev/docstatic.git
 
-Le modèle classique sera automatiquement ajouté à votre projet après l'exécution de la commande :
+# cd dans le dossier du projet
+$ yarn
 
-``bash
-npm init docusaurus@latest my-website classic
+# Démarrer le serveur de développement local
+$ yarn dev
 ```
 
-Vous pouvez taper cette commande dans l'Invite de commande, Powershell, Terminal, ou tout autre terminal intégré à votre éditeur de code.
+> Cela permet d'installer les dépendances et d'ouvrir le site web dans votre navigateur.
 
-La commande installe également toutes les dépendances nécessaires à l'exécution de Docusaurus.
+Visitez le CMS à l'adresse [http://localhost:3000/docstatic/admin](http://localhost:3000/docstatic/admin) pour commencer à éditer.
 
-## Démarrez votre site
+### Structure des dossiers
 
-Lancez le serveur de développement :
-
-``bash
-cd mon-site
-npm run start
+```
+├── /apis: Schémas OpenAPI
+├── /blog: articles de blog
+├── /docs: documents pour les utilisateurs
+│   └── /wiki: wiki
+├── /i18n: la traduction
+├── /reuse: contenu réutilisable
+│   ├── /code: extraits de code
+│   ├── /snippets: extraits de texte
+│   └── /taxonomy: étiquettes de taxonomie
+└── /static: contenu statique
+    ├─── /img: images
+    └─── /reuse: contenu réutilisable
+         ├── /glossaryTerms: termes de glossaire traduisibles
+         └── /variableSets: ensembles de variables traduisibles
 ```
 
-La commande `cd` change le répertoire dans lequel vous travaillez. Afin de travailler avec votre site Docusaurus nouvellement créé, vous devrez naviguer dans le terminal jusqu'à ce répertoire.
+### Générer des documents OpenAPI
 
-La commande `npm run start` construit votre site web localement et le sert à travers un serveur de développement, prêt à être visualisé sur [http://localhost:3000/](http://localhost:3000/).
+Pour générer tous les documents OpenAPI, exécutez la commande suivante à partir du dossier racine de votre projet :
 
-Ouvrez `docs/intro.md` (cette page) et éditez quelques lignes : le site **se recharge automatiquement** et affiche vos changements.
+```
+yarn gen-api-docs all
+```
+
+> Ceci génère les documents de l'API pour tous les fichiers de la spécification OpenAPI (OAS) référencés dans votre configuration `docusaurus-plugin-openapi-docs`.
+
+Vous pouvez aussi générer des documents OpenAPI pour un seul chemin ou OAS en spécifiant l'unique `id` :
+
+```
+yarn gen-api-docs <id>
+```
+
+Exemple :
+
+```bash
+yarn gen-api-docs petstore
+```
+
+> Cela ne génère que les documents de l'API relatifs à `petstore`.
+
+Si vous avez plusieurs versions de la même API, `gen-api-docs` ne génère que la plus récente. Pour générer toutes les versions, utilisez le drapeau `--all-versions`.
+
+Exemple :
+
+```bash
+yarn gen-api-docs all --all-versions
+```
+
+> Ceci génère les documents de l'API pour toutes les versions de tous les fichiers de la spécification OpenAPI (OAS) référencés dans votre configuration `docusaurus-plugin-openapi-docs`.
+
+### Nettoyage des documents de l'API
+
+Pour nettoyer/supprimer tous les documents API, exécutez cette commande à partir du dossier racine de votre projet :
+
+```bash
+yarn clean-api-docs all
+```
+
+Vous pouvez également supprimer un ensemble particulier de documents de l'API en spécifiant l'`id` unique de l'instance de spécification souhaitée.
+
+```bash
+yarn clean-api-docs <id>
+```
+
+Exemple :
+
+```bash
+yarn clean-api-docs petstore
+```
+
+> Ceci supprime tous les documents de l'API relatifs à `burgers`.
+
+Si vous avez plusieurs versions de la même API, `clean-api-docs` ne nettoie que la plus récente. Pour nettoyer toutes les versions, utilisez le drapeau `--all-versions`.
+
+Exemple :
+
+```bash
+yarn clean-api-docs all --all-versions
+```
+
+> Ceci nettoie les docs API pour toutes les versions de tous les fichiers de spécification OpenAPI (OAS) référencés dans votre configuration `docusaurus-plugin-openapi-docs`.
+
+### Versioning OpenAPI docs
+
+Pour générer *tous* les documents OpenAPI versionnés, exécutez cette commande depuis le dossier racine de votre projet :
+
+```bash
+yarn gen-api-docs:version <id>:all
+```
+
+Exemple :
+
+```bash
+yarn gen-api-docs:version petstore:all
+```
+
+> Ceci génère les documents de l'API pour tous les fichiers de la spécification OpenAPI (OAS) référencés dans votre configuration `versions` et génère également un fichier `versions.json`.
+
+> Remplacez `all` par un identifiant de version spécifique pour générer/nettoyer une version spécifique. Générer pour `all` ou un identifiant de version spécifique met automatiquement à jour le fichier `versions.json`.
+
+### Construire
+
+```
+$ yarn build
+```
+
+Cette commande génère du contenu statique dans le dossier `build` et peut être servie par n'importe quel service d'hébergement de contenu statique. Par exemple, cette commande permet de générer un contenu statique dans le dossier `build` :
+
+```
+npm run serve
+```
+
+### Déploiement
+
+Pour déployer en production et supporter l'édition sur votre site web (à `votre-entreprise.github.io/baseurl/admin`), suivez les étapes de TinaCMS pour [déployer vers les pages GitHub](https://tina.io/docs/tina-cloud/deployment-options/github-pages).
