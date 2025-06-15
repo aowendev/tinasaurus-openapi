@@ -1247,7 +1247,7 @@ export default defineConfig({
   build: {
     outputFolder: "admin",
     publicFolder: "static",
-    basePath: "tinasaurus-openapi", // if your Tina admin is not at the root of your site, set this to the path where it is hosted
+    basePath: "docstatic", // if your Tina admin is not at the root of your site, set this to the path where it is hosted
   },
   media: {
     tina: {

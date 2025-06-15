@@ -1,4 +1,4 @@
-# tinasaurus-openapi
+# docstatic
 
 An example [Docusaurus 3](https://docusaurus.io/) documentation site with [TinaCMS](https://tina.io/) (including tag management), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) charts, [Lunr](https://lunrjs.com/) search integration and [Raw Loader](https://github.com/webpack-contrib/raw-loader) for code snippets.
 
@@ -6,7 +6,7 @@ The project was created by creating a new Docusaurus v3 site with Palo Alto Netw
 
 **Note**: Lunr search is available only in production.
 
-**Demo**: [https://aowendev.github.io/tinasaurus-openapi/](https://aowendev.github.io/tinasaurus-openapi/)
+**Demo**: [https://aowendev.github.io/docstatic/](https://aowendev.github.io/docstatic/)
 
 The demo includes the use of snippets (partials), code snippets and variables (on the _Test Page_). It also includes an example  workflow for the _Docs_ collection in Tina:
 

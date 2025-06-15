@@ -1,11 +1,11 @@
 {
   "label": "Homepage",
-  "title": "Tinasaurus OpenAPI",
-  "description": "CCMS meets docs-as-code",
+  "title": "docStatic",
+  "description": "Composable Content Management System",
   "blocks": [
     {
-      "title": "Tinasaurus OpenAPI",
-      "subtitle": "CCMS meets docs-as-code",
+      "title": "docStatic",
+      "subtitle": "Composable Content Management System",
       "document": "docs/quick-start.mdx",
       "documentLabel": "Quick Start - 5min ⏱️",
       "_template": "hero"

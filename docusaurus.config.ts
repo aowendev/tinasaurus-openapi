@@ -57,13 +57,13 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
-  title: docusaurusData.title || "Tinasaurus OpenAPI",
-  tagline: docusaurusData.tagline || "CCMS meets docs-as-code",
-  url: docusaurusData.url || "https://aowendev.github.io/tinasaurus-openapi/",
-  baseUrl: "/tinasaurus-openapi/",
+  title: docusaurusData.title || "My Site",
+  tagline: docusaurusData.tagline || "Tag Line",
+  url: docusaurusData.url || "https://www.example.com/docstatic/",
+  baseUrl: "/docstatic/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/docstatic.png",
 
   // Github pages deployment config.
   projectName: 'aowendev.github.io',
