@@ -11,17 +11,35 @@ unlisted: false
 
 # docStatic
 
-An example [Docusaurus 3](https://docusaurus.io/) documentation site with [TinaCMS](https://tina.io/) (including tag management), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) charts, [Lunr](https://lunrjs.com/) search integration and [Raw Loader](https://github.com/webpack-contrib/raw-loader) for code snippets.
+A composable documentation solution based on [Docusaurus 3](https://docusaurus.io/) and [TinaCMS](https://tina.io/) (including tag management), [OpenAPI](https://swagger.io/specification/), [Mermaid](https://mermaid.js.org/) charts, [Lunr](https://lunrjs.com/) search integration and [Raw Loader](https://github.com/webpack-contrib/raw-loader) for code snippets.
 
 The project was created by creating a new Docusaurus v3 site with Palo Alto Networks' [OpenAPI plugin](https://github.com/PaloAltoNetworks/docusaurus-openapi-docs) and merging [Tinasaurus](https://github.com/tinacms/tinasaurus) to create a working config.
 
 **Note**: Lunr search is available only in production.
 
-This demo includes the use of snippets (partials), code snippets and variables (on the *Test Page*). It also includes an example  workflow for the *Docs* collection in Tina:
+This demo includes the use of snippets (partials), code snippets and variables (on the [Test Page](test-page)). It includes an example  workflow for the *Docs* collection in Tina:
 
 `Draft` → `In Review` → `In Translation` → `Published`
 
-It also enables you to set the `Unlisted` flag and a `Translation Approved` flag from Tina.
+It enables you to set the `Unlisted` flag and a `Translation Approved` flag from Tina.
+
+
+## Local development
+
+```shell
+# clone the repository
+git clone git@github.com:aowendev/docstatic.git
+
+# cd in the project folder
+$ yarn
+
+# Start local dev server
+$ yarn dev
+```
+
+> This installs dependencies and open the website in your browser.
+
+Visit the CMS at [http://localhost:3000/docstatic/admin](http://localhost:3000/docstatic/admin) to start editing.
 
 ### Folder structure
 
@@ -42,32 +60,15 @@ It also enables you to set the `Unlisted` flag and a `Translation Approved` flag
          └── /variableSets: translatable variable sets
 ```
 
-## 🔧 Local development
-
-```shell
-# clone the repository
-git clone git@github.com:aowendev/docstatic.git
-
-# cd in the project directory
-$ yarn
-
-# Start local dev server
-$ yarn dev
-```
-
-This will install dependencies and open the website in your browser.
-
-Visit the CMS at [http://localhost:3000/docstatic/admin](http://localhost:3000/docstatic/admin) to start editing.
-
 ### Generating OpenAPI Docs
 
-To generate all OpenAPI docs, run this command from the root directory of your project:
+To generate all OpenAPI docs, run this command from the root folder of your project:
 
 ```
 yarn gen-api-docs all
 ```
 
-> This will generate API docs for all of the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
+> This generates API docs for all of the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
 
 You can also generate OpenAPI docs for a single path or OAS by specifying the unique `id`:
 
@@ -81,7 +82,7 @@ Example:
 yarn gen-api-docs petstore
 ```
 
-> The example above will only generate API docs relative to `petstore`.
+> This only generates API docs relative to `petstore`.
 
 If you have multiple versions of the same API, `gen-api-docs` only generates the latest. To generate all versions, use the `--all-versions` flag.
 
@@ -91,11 +92,11 @@ Example:
 yarn gen-api-docs all --all-versions
 ```
 
-> This will generate API docs for all versions of all the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
+> This generates API docs for all versions of all the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
 
 ### Cleaning API Docs
 
-To clean/remove all API Docs, run this command from the root directory of your project:
+To clean/remove all API Docs, run this command from the root folder of your project:
 
 ```bash
 yarn clean-api-docs all
@@ -113,7 +114,7 @@ Example:
 yarn clean-api-docs petstore
 ```
 
-> The example above will remove all API docs relative to `burgers`.
+> This removes all API docs relative to `burgers`.
 
 If you have multiple versions of the same API, `clean-api-docs` only cleans the latest. To clean all versions, use the `--all-versions` flag.
 
@@ -123,11 +124,11 @@ Example:
 yarn clean-api-docs all --all-versions
 ```
 
-> This will clean API docs for all versions of all the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
+> This cleans API docs for all versions of all the OpenAPI specification (OAS) files referenced in your `docusaurus-plugin-openapi-docs` config.
 
 ### Versioning OpenAPI docs
 
-To generate *all* versioned OpenAPI docs, run this command from the root directory of your project:
+To generate *all* versioned OpenAPI docs, run this command from the root folder of your project:
 
 ```bash
 yarn gen-api-docs:version <id>:all
@@ -139,9 +140,9 @@ Example:
 yarn gen-api-docs:version petstore:all
 ```
 
-> This will generate API docs for all of the OpenAPI specification (OAS) files referenced in your `versions` config and will also generate a `versions.json` file.
+> This generates API docs for all of the OpenAPI specification (OAS) files referenced in your `versions` config and also generates a `versions.json` file.
 
-> Substitue `all` with a specific version ID to generate/clean a specific version. Generating for `all` or a specific version ID will automatically update the `versions.json` file.
+> Substitue `all` with a specific version ID to generate/clean a specific version. Generating for `all` or a specific version ID automatically updates the `versions.json` file.
 
 ### Build
 
@@ -149,7 +150,7 @@ yarn gen-api-docs:version petstore:all
 $ yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service. For examlpe:
+This command generates static content into the `build` folder and can be served using any static contents hosting service. For example:
 
 ```
 npm run serve
@@ -157,4 +158,4 @@ npm run serve
 
 ### Deployment
 
-To deploy to production and support editing on your live website (at `your-company.github.io/baseurl/admin`), follow the steps from the TinaCMS to [deploy to GitHub pages](https://tina.io/docs/tina-cloud/deployment-options/github-pages).
+To deploy to production and support editing on your live website (at `your-company.github.io/baseurl/admin`), follow the steps from TinaCMS to [deploy to GitHub pages](https://tina.io/docs/tina-cloud/deployment-options/github-pages).
