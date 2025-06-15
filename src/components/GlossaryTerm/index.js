@@ -17,10 +17,11 @@ const GlossaryTerm = ({ termKey }) => {
           : null;
 
         // Find the language object
-        const langObj = entry && Array.isArray(entry.languages)
-          ? entry.languages.find((l) => l.lang === lang) ||
-            entry.languages.find((l) => l.lang === "en")
-          : null;
+        const langObj =
+          entry && Array.isArray(entry.languages)
+            ? entry.languages.find((l) => l.lang === lang) ||
+              entry.languages.find((l) => l.lang === "en")
+            : null;
 
         // Find the first translation (if any)
         const translation =

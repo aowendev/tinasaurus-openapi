@@ -7,7 +7,7 @@ const Snippet = ({ filepath }) => {
   useEffect(() => {
     let isMounted = true;
     const loadSnippet = async () => {
-    const lang = document.documentElement.lang || "en";
+      const lang = document.documentElement.lang || "en";
 
       try {
         let mod;

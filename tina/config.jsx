@@ -1032,7 +1032,7 @@ const VariableSetCollection = {
               list: true,
               ui: {
                 itemProps: (item) => ({
-                  label: item.lang + ': ' + item.value,
+                  label: item.lang + ": " + item.value,
                 }),
               },
               fields: [
@@ -1170,11 +1170,11 @@ const GlossaryTermTranslationTemplate = {
 const GlossaryTermLanguageTemplate = {
   name: "language",
   label: "Language",
-              ui: {
-                itemProps: (item) => ({
-                  label: item.lang + ': ' + item.translations[0].term,
-                }),
-              },
+  ui: {
+    itemProps: (item) => ({
+      label: item.lang + ": " + item.translations[0].term,
+    }),
+  },
   fields: [
     {
       type: "string",
@@ -1195,11 +1195,11 @@ const GlossaryTermLanguageTemplate = {
 const GlossaryTermTemplate = {
   name: "glossaryTerm",
   label: "Glossary Term",
-      ui: {
-        itemProps: (item) => ({
-          label: item?.key,
-        }),
-      },
+  ui: {
+    itemProps: (item) => ({
+      label: item?.key,
+    }),
+  },
   fields: [
     {
       type: "string",
