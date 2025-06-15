@@ -10,4 +10,4 @@ A composable documenation solution for writers, developers, and users.
 ![Enhancements](https://img.shields.io/github/issues/aowendev/docstatic/enhancement)
 ![Doc-bugs](https://img.shields.io/github/issues/aowendev/docstatic/documentation)
 
-![Tinasaurus Demo](demo.jpg)
+![Tinasaurus Demo](/static/img/docStaticDemo.jpg)
