@@ -17,9 +17,10 @@ const VariableSet = ({ setKey, variableKey }) => {
           : null;
 
         // Find the variable by variableKey
-        const variable = set && Array.isArray(set.variables)
-          ? set.variables.find((v) => v.key === variableKey)
-          : null;
+        const variable =
+          set && Array.isArray(set.variables)
+            ? set.variables.find((v) => v.key === variableKey)
+            : null;
 
         // Find the translation by lang, fallback to 'en'
         let value = "";

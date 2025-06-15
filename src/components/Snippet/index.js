@@ -7,11 +7,7 @@ const Snippet = ({ filepath }) => {
   useEffect(() => {
     let isMounted = true;
     const loadSnippet = async () => {
-      let lang = "en";
-      if (typeof window !== "undefined") {
-        const match = window.location.pathname.match(/^\/([a-z]{2})(\/|$)/i);
-        lang = match ? match[1] : "en";
-      }
+    const lang = document.documentElement.lang || "en";
 
       try {
         let mod;

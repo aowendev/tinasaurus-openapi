@@ -372,7 +372,7 @@ const GlossaryTermCollection = {
 const DocLinkTemplate = {
   name: "doc",
   label: "Doc Link",
-              ui: {
+  ui: {
     itemProps: (item) => {
       return {
         label: item?.label
@@ -382,23 +382,23 @@ const DocLinkTemplate = {
             : item.name,
       };
     },
-              },
-              fields: [
-                {
+  },
+  fields: [
+    {
       label: "Document",
       name: "document",
       type: "reference",
       collections: ["doc"],
       isTitle: true,
-                  required: true,
-                },
-                {
+      required: true,
+    },
+    {
       name: "label",
       label: "Label",
       description: "By default this is the document title",
-                  type: "string",
-        },
-      ],
+      type: "string",
+    },
+  ],
 };
 
 const ExternalLinkTemplate = {
@@ -1025,7 +1025,7 @@ const PagesCollection = {
 
 // DocStatic Collections
 
-// Variable Sets
+// variable sets
 const VariableSetCollection = {
   label: "Variable Sets",
   name: "variableSets",
@@ -1114,7 +1114,7 @@ const TaxonomyCollection = {
   path: "reuse/taxonomy",
   format: "json",
   fields: [
-     {
+    {
       type: "object",
       list: true,
       name: "taxonomy",
@@ -1143,39 +1143,39 @@ const TaxonomyCollection = {
             }),
           },
           fields: [
-        {
-          type: "string",
-          name: "tag",
-          label: "Tag",
-          isTitle: true,
-          required: true,
-        },
-        {
-          type: "object",
-          list: true,
-          name: "children",
-          label: "Children",
-          ui: {
-            itemProps: (item) => ({
-              label: item?.tag ? item.tag : item.name,
-            }),
-          },
-          fields: [
-        {
-          type: "string",
-          name: "tag",
-          label: "Tag",
-          isTitle: true,
-          required: true,
-        },
-          ]          },
-    
-      ],
+            {
+              type: "string",
+              name: "tag",
+              label: "Tag",
+              isTitle: true,
+              required: true,
+            },
+            {
+              type: "object",
+              list: true,
+              name: "children",
+              label: "Children",
+              ui: {
+                itemProps: (item) => ({
+                  label: item?.tag ? item.tag : item.name,
+                }),
+              },
+              fields: [
+                {
+                  type: "string",
+                  name: "tag",
+                  label: "Tag",
+                  isTitle: true,
+                  required: true,
+                },
+              ],
+            },
+          ],
         },
       ],
     },
   ],
-            
+
   ui: {
     allowedActions: {
       create: false,
@@ -1183,12 +1183,6 @@ const TaxonomyCollection = {
     },
   },
 };
-
-
-
-
-
-
 
 export default defineConfig({
   branch,
