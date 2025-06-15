@@ -6,7 +6,7 @@
     {
       "title": "docStatic",
       "subtitle": "Composable Documentation Solution",
-      "document": "docs/quick-start/quick-start.mdx",
+      "document": "docs/quick-start",
       "documentLabel": "Quick Start",
       "_template": "hero"
     },
